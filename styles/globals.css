@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f8fbfc;
+  color: #111827;
+  font-family: var(--font-manrope), Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #62c3d4;
+  color: #111827;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-7xl px-4 tablet:px-8 laptop:px-10 desktop:px-12;
+  }
+
+  .section-spacing {
+    @apply py-12 tablet:py-16 laptop:py-20 desktop:py-24;
+  }
+}
