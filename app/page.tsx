@@ -7,6 +7,7 @@ import { StatsBar } from "@/components/landing/stats-bar";
 import { WhyProxiSection } from "@/components/landing/why-proxi-section";
 import { RolesSection } from "@/components/landing/roles-section";
 import { CtaBanner } from "@/components/landing/cta-banner";
+import { FaqSection } from "@/components/landing/faq-section";
 import { Footer } from "@/components/ui/footer";
 import { RoleModal } from "@/components/landing/role-modal";
 
@@ -41,6 +42,9 @@ export default function LandingPage() {
 
         {/* Built for Everyone / Roles Breakdown */}
         <RolesSection onOpenRoleModal={handleOpenRoleModal} />
+
+        {/* FAQ */}
+        <FaqSection />
 
         {/* Early Access CTA Banner */}
         <CtaBanner onOpenRoleModal={handleOpenRoleModal} />
