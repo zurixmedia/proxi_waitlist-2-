@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import * as React from "react";
 import { useForm } from "react-hook-form";
@@ -7,49 +7,71 @@ import { z } from "zod";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Select } from "@/components/ui/select";
 import { Typography } from "@/components/ui/typography";
 import { Badge } from "@/components/ui/badge";
 import { ProxiIcon } from "@/components/ui/icons";
+import { cn } from "@/lib/utils";
 import {
   CheckCircle2,
   UserRound,
   BriefcaseBusiness,
   MapPin,
   Mail,
-  Phone,
   Sparkles,
 } from "lucide-react";
+
+const serviceCategories = [
+  "Plumbing",
+  "Electrical",
+  "Painting",
+  "Cleaning",
+  "Carpentry",
+  "AC Repair",
+  "Appliance Repair",
+  "Gardening",
+];
 
 const waitlistSchema = z
   .object({
     fullName: z.string().trim().min(2, "Please enter your full name."),
     email: z.string().trim().email("Please enter a valid email address."),
-    phoneNumber: z.string().trim().optional().or(z.literal("")),
-    role: z.enum(["customer", "artisan"]),
+    role: z.enum(["customer", "artisan"], "Please select your role."),
     location: z.string().trim().min(2, "Please enter your location."),
-    trade: z.string().trim().optional().or(z.literal("")),
+    category: z.string().trim().optional(),
   })
   .superRefine((value, ctx) => {
-    if (value.role === "artisan" && !value.trade) {
+    if (value.role === "artisan" && !value.category) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        path: ["trade"],
-        message: "Please tell us your trade or service.",
+        path: ["category"],
+        message: "Please select your service category.",
       });
     }
   });
 
+interface WaitlistFormProps {
+  defaultRole?: "customer" | "artisan";
+  fixedRole?: boolean;
+  onSuccess?: (values: WaitlistFormValues) => void;
+}
+
 type WaitlistFormValues = z.infer<typeof waitlistSchema>;
 
-export function WaitlistForm() {
+type FormStatus = "idle" | "loading" | "success" | "error";
+
+export function WaitlistForm({
+  defaultRole,
+  fixedRole = false,
+  onSuccess,
+}: WaitlistFormProps) {
   const [submittedRole, setSubmittedRole] = React.useState<
     "customer" | "artisan" | null
   >(null);
-  const [isPreview, setIsPreview] = React.useState(false);
-  const [serverState, setServerState] = React.useState<{
-    status: "idle" | "loading" | "success" | "error";
-    message?: string;
-  }>({ status: "idle" });
+  const [formStatus, setFormStatus] = React.useState<FormStatus>("idle");
+  const [statusMessage, setStatusMessage] = React.useState<string | undefined>(
+    undefined,
+  );
 
   const {
     register,
@@ -61,46 +83,45 @@ export function WaitlistForm() {
     defaultValues: {
       fullName: "",
       email: "",
-      phoneNumber: "",
-      role: undefined,
+      role: defaultRole,
       location: "",
-      trade: "",
+      category: "",
     },
+    mode: "onTouched",
   });
 
-  const selectedRole = watch("role");
+  const selectedRole = watch("role") ?? defaultRole;
 
   const onSubmit = async (data: WaitlistFormValues) => {
-    setServerState({ status: "loading" });
-    try {
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+    setFormStatus("loading");
+    setStatusMessage(undefined);
+    setSubmittedRole(null);
 
-      if (res.status === 201) {
-        setSubmittedRole(data.role);
-        setIsPreview(true);
-        setServerState({ status: "success", message: "Joined waitlist." });
-      } else if (res.status === 409) {
-        const json = await res.json();
-        setServerState({
-          status: "error",
-          message: json?.error || "Email already on the waitlist.",
-        });
-      } else if (res.status === 422) {
-        setServerState({
-          status: "error",
-          message: "Validation failed. Please check your inputs.",
-        });
-      } else {
-        setServerState({ status: "error", message: "Server error." });
-      }
-    } catch (err) {
-      setServerState({ status: "error", message: "Network error." });
+    await new Promise((resolve) => setTimeout(resolve, 700));
+
+    if (data.email.toLowerCase().includes("error")) {
+      setFormStatus("error");
+      setStatusMessage(
+        "There was an issue preparing your preview. Please update your email and try again.",
+      );
+      return;
+    }
+
+    setSubmittedRole(data.role);
+    setFormStatus("success");
+
+    if (onSuccess) {
+      onSuccess(data);
+      return;
     }
   };
+
+  const inputErrorClass = (error?: unknown) =>
+    cn(
+      error
+        ? "border-brand-error focus:border-brand-error focus:ring-brand-error/40"
+        : "",
+    );
 
   return (
     <div className="grid gap-8 laptop:grid-cols-[0.95fr_1.05fr]">
@@ -114,8 +135,8 @@ export function WaitlistForm() {
             Join the Proxi waitlist
           </Typography>
           <Typography variant="body">
-            Be first to know when Proxi opens for trusted local professionals
-            and customers in your area.
+            Sign up for early updates and access to trusted local artisans or
+            customers in your area.
           </Typography>
         </div>
 
@@ -136,6 +157,7 @@ export function WaitlistForm() {
                 id="fullName"
                 placeholder="Amina Okafor"
                 aria-invalid={Boolean(errors.fullName)}
+                className={inputErrorClass(errors.fullName)}
                 {...register("fullName")}
               />
               {errors.fullName ? (
@@ -158,7 +180,7 @@ export function WaitlistForm() {
                   id="email"
                   type="email"
                   placeholder="you@example.com"
-                  className="pl-10"
+                  className={cn("pl-10", inputErrorClass(errors.email))}
                   aria-invalid={Boolean(errors.email)}
                   {...register("email")}
                 />
@@ -166,70 +188,6 @@ export function WaitlistForm() {
               {errors.email ? (
                 <p className="text-sm text-brand-error">
                   {errors.email.message}
-                </p>
-              ) : null}
-            </div>
-
-            <div className="space-y-2">
-              <label
-                htmlFor="phoneNumber"
-                className="text-sm font-semibold text-brand-textPrimary"
-              >
-                Phone number{" "}
-                <span className="font-normal text-brand-textSecondary">
-                  (optional)
-                </span>
-              </label>
-              <div className="relative">
-                <Phone className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-textSecondary" />
-                <Input
-                  id="phoneNumber"
-                  type="tel"
-                  placeholder="0801 234 5678"
-                  className="pl-10"
-                  {...register("phoneNumber")}
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2 tablet:col-span-2">
-              <label className="text-sm font-semibold text-brand-textPrimary">
-                I am joining as
-              </label>
-              <div className="grid gap-3 sm:grid-cols-2">
-                <label
-                  className={`flex cursor-pointer items-center gap-3 rounded-2xl border p-4 transition ${selectedRole === "customer" ? "border-brand-primary bg-brand-tealLight" : "border-brand-border bg-brand-background"}`}
-                >
-                  <input
-                    type="radio"
-                    value="customer"
-                    className="h-4 w-4 accent-brand-primary"
-                    {...register("role")}
-                  />
-                  <span className="flex items-center gap-2 text-sm font-semibold text-brand-textPrimary">
-                    <UserRound className="h-4 w-4 text-brand-primary" />
-                    Customer
-                  </span>
-                </label>
-
-                <label
-                  className={`flex cursor-pointer items-center gap-3 rounded-2xl border p-4 transition ${selectedRole === "artisan" ? "border-brand-primary bg-brand-tealLight" : "border-brand-border bg-brand-background"}`}
-                >
-                  <input
-                    type="radio"
-                    value="artisan"
-                    className="h-4 w-4 accent-brand-primary"
-                    {...register("role")}
-                  />
-                  <span className="flex items-center gap-2 text-sm font-semibold text-brand-textPrimary">
-                    <BriefcaseBusiness className="h-4 w-4 text-brand-primary" />
-                    Artisan
-                  </span>
-                </label>
-              </div>
-              {errors.role ? (
-                <p className="text-sm text-brand-error">
-                  {errors.role.message}
                 </p>
               ) : null}
             </div>
@@ -246,7 +204,7 @@ export function WaitlistForm() {
                 <Input
                   id="location"
                   placeholder="Benin City"
-                  className="pl-10"
+                  className={cn("pl-10", inputErrorClass(errors.location))}
                   aria-invalid={Boolean(errors.location)}
                   {...register("location")}
                 />
@@ -258,38 +216,98 @@ export function WaitlistForm() {
               ) : null}
             </div>
 
-            <div className="space-y-2">
-              <label
-                htmlFor="trade"
-                className="text-sm font-semibold text-brand-textPrimary"
-              >
-                Trade{" "}
-                <span className="font-normal text-brand-textSecondary">
-                  (for artisans)
-                </span>
+            <div className="space-y-2 tablet:col-span-2">
+              <label className="text-sm font-semibold text-brand-textPrimary">
+                I am joining as
               </label>
-              <Input
-                id="trade"
-                placeholder="Plumbing, Carpentry..."
-                aria-invalid={Boolean(errors.trade)}
-                {...register("trade")}
-              />
-              {errors.trade ? (
+              <div className="grid gap-3 sm:grid-cols-2">
+                <label
+                  className={cn(
+                    "flex cursor-pointer items-center gap-3 rounded-2xl border p-4 transition",
+                    selectedRole === "customer"
+                      ? "border-brand-primary bg-brand-tealLight"
+                      : "border-brand-border bg-brand-background",
+                  )}
+                >
+                  <input
+                    type="radio"
+                    value="customer"
+                    className="h-4 w-4 accent-brand-primary"
+                    disabled={fixedRole}
+                    {...register("role")}
+                  />
+                  <span className="flex items-center gap-2 text-sm font-semibold text-brand-textPrimary">
+                    <UserRound className="h-4 w-4 text-brand-primary" />
+                    Customer
+                  </span>
+                </label>
+
+                <label
+                  className={cn(
+                    "flex cursor-pointer items-center gap-3 rounded-2xl border p-4 transition",
+                    selectedRole === "artisan"
+                      ? "border-brand-primary bg-brand-tealLight"
+                      : "border-brand-border bg-brand-background",
+                  )}
+                >
+                  <input
+                    type="radio"
+                    value="artisan"
+                    className="h-4 w-4 accent-brand-primary"
+                    disabled={fixedRole}
+                    {...register("role")}
+                  />
+                  <span className="flex items-center gap-2 text-sm font-semibold text-brand-textPrimary">
+                    <BriefcaseBusiness className="h-4 w-4 text-brand-primary" />
+                    Artisan
+                  </span>
+                </label>
+              </div>
+              {errors.role ? (
                 <p className="text-sm text-brand-error">
-                  {errors.trade.message}
+                  {errors.role.message}
                 </p>
               ) : null}
             </div>
+
+            {selectedRole === "artisan" ? (
+              <div className="space-y-2 tablet:col-span-2">
+                <label
+                  htmlFor="category"
+                  className="text-sm font-semibold text-brand-textPrimary"
+                >
+                  Service category
+                </label>
+                <Select
+                  id="category"
+                  className={inputErrorClass(errors.category)}
+                  aria-invalid={Boolean(errors.category)}
+                  {...register("category")}
+                >
+                  <option value="">Select category</option>
+                  {serviceCategories.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
+                </Select>
+                {errors.category ? (
+                  <p className="text-sm text-brand-error">
+                    {errors.category.message}
+                  </p>
+                ) : null}
+              </div>
+            ) : null}
           </div>
 
           <Button
             type="submit"
             className="w-full"
-            disabled={isSubmitting || serverState.status === "loading"}
+            disabled={isSubmitting || formStatus === "loading"}
           >
-            {isSubmitting || serverState.status === "loading"
-              ? "Submitting..."
-              : "Join waitlist"}
+            {isSubmitting || formStatus === "loading"
+              ? "Loading..."
+              : "Preview waitlist"}
           </Button>
         </form>
       </Card>
@@ -302,63 +320,63 @@ export function WaitlistForm() {
           <div className="space-y-4">
             <Badge variant="dark">What you get</Badge>
             <Typography as="h3" variant="h3" className="text-white">
-              A front-row seat to the future of Proxi
+              Frontend validation preview
             </Typography>
             <Typography variant="body" className="text-brand-accent">
-              We will share launch updates, beta access, and early benefits with
-              selected members.
+              This is a client-only experience with no API, no database, and no
+              real submission.
             </Typography>
           </div>
 
           <div className="rounded-[1.5rem] border border-white/20 bg-white/10 p-5 backdrop-blur-sm">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
-                <Sparkles className="h-5 w-5" />
+                <Sparkles className="h-5 w-5" aria-hidden />
               </div>
               <div>
                 <p className="text-sm font-semibold">Preview mode</p>
                 <p className="text-sm text-brand-accent">
-                  This is a UI-only experience.
+                  Loading, error, and success states render inside the UI.
                 </p>
               </div>
             </div>
 
-            {serverState.status === "success" && submittedRole ? (
+            {formStatus === "loading" ? (
+              <div className="mt-5 rounded-2xl border border-white/20 bg-white/10 p-4 text-brand-accent">
+                <div className="flex items-center gap-2 text-sm font-semibold">
+                  <ProxiIcon
+                    icon="loading"
+                    className="h-4 w-4 text-white animate-spin"
+                  />
+                  Generating preview
+                </div>
+                <p className="mt-2 text-sm text-white/80">
+                  Validating your fields and preparing the preview state.
+                </p>
+              </div>
+            ) : null}
+
+            {formStatus === "error" ? (
+              <div className="mt-5 rounded-2xl bg-red-50 p-4 text-red-700">
+                <div className="flex items-center gap-2 text-sm font-semibold">
+                  <span>Validation error</span>
+                </div>
+                <p className="mt-2 text-sm">{statusMessage}</p>
+              </div>
+            ) : null}
+
+            {formStatus === "success" && submittedRole ? (
               <div className="mt-5 rounded-2xl bg-brand-surface p-4 text-brand-textPrimary">
                 <div className="flex items-center gap-2 text-sm font-semibold text-brand-primary">
-                  <CheckCircle2 className="h-4 w-4" />
-                  You're on the waitlist
+                  <CheckCircle2 className="h-4 w-4" aria-hidden />
+                  Success preview
                 </div>
                 <p className="mt-2 text-sm text-brand-textSecondary">
-                  You signed up as{" "}
+                  Ready as a{" "}
                   <span className="font-semibold text-brand-dark">
                     {submittedRole === "customer" ? "Customer" : "Artisan"}
                   </span>
-                  . We'll be in touch.
-                </p>
-              </div>
-            ) : serverState.status === "error" ? (
-              <div className="mt-5 rounded-2xl bg-red-50 p-4 text-red-700">
-                <div className="flex items-center gap-2 text-sm font-semibold">
-                  <span>Submission error</span>
-                </div>
-                <p className="mt-2 text-sm">
-                  {serverState.message ||
-                    "There was an error submitting your request."}
-                </p>
-              </div>
-            ) : isPreview && submittedRole ? (
-              <div className="mt-5 rounded-2xl bg-brand-surface p-4 text-brand-textPrimary">
-                <div className="flex items-center gap-2 text-sm font-semibold text-brand-primary">
-                  <CheckCircle2 className="h-4 w-4" />
-                  Ready for review
-                </div>
-                <p className="mt-2 text-sm text-brand-textSecondary">
-                  You selected{" "}
-                  <span className="font-semibold text-brand-dark">
-                    {submittedRole === "customer" ? "Customer" : "Artisan"}
-                  </span>{" "}
-                  for the waitlist preview.
+                  .
                 </p>
               </div>
             ) : null}

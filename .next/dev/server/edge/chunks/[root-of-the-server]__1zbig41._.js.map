@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/middleware.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\nimport type { NextRequest } from \"next/server\";\r\n\r\nexport function middleware(request: NextRequest) {\r\n  return NextResponse.next();\r\n}\r\n"],"names":["middleware","request","next"],"mappings":";;;;AAAA;AAAA;;AAGO,SAASA,WAAWC,OAAoB;IAC7C,OAAO,6MAAY,CAACC,IAAI;AAC1B"}}]
+}

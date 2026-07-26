@@ -65,10 +65,16 @@ export function FaqSection() {
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 className="flex w-full items-center justify-between gap-4 text-left"
               >
-                <Typography as="p" variant="body" className="font-semibold text-brand-dark">
+                <Typography
+                  as="p"
+                  variant="body"
+                  className="font-semibold text-brand-dark"
+                >
                   {item.q}
                 </Typography>
-                <span className="text-sm text-brand-textSecondary">{openIndex === idx ? "−" : "+"}</span>
+                <span className="text-sm text-brand-textSecondary">
+                  {openIndex === idx ? "−" : "+"}
+                </span>
               </button>
 
               <div
@@ -76,7 +82,9 @@ export function FaqSection() {
                 role="region"
                 aria-labelledby={`faq-question-${idx}`}
                 className={`mt-3 transition-[max-height,opacity] overflow-hidden ${
-                  openIndex === idx ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                  openIndex === idx
+                    ? "max-h-40 opacity-100"
+                    : "max-h-0 opacity-0"
                 }`}
               >
                 <Typography variant="body" className="text-brand-textSecondary">
