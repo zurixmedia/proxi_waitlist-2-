@@ -1,5 +1,4 @@
 {
-  "/join/customer/page": "app/join/customer/page.js",
   "/join/page": "app/join/page.js",
   "/page": "app/page.js"
 }
