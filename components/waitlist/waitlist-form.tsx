@@ -46,6 +46,10 @@ export function WaitlistForm() {
     "customer" | "artisan" | null
   >(null);
   const [isPreview, setIsPreview] = React.useState(false);
+  const [serverState, setServerState] = React.useState<{
+    status: "idle" | "loading" | "success" | "error";
+    message?: string;
+  }>({ status: "idle" });
 
   const {
     register,
@@ -66,9 +70,36 @@ export function WaitlistForm() {
 
   const selectedRole = watch("role");
 
-  const onSubmit = (data: WaitlistFormValues) => {
-    setSubmittedRole(data.role);
-    setIsPreview(true);
+  const onSubmit = async (data: WaitlistFormValues) => {
+    setServerState({ status: "loading" });
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.status === 201) {
+        setSubmittedRole(data.role);
+        setIsPreview(true);
+        setServerState({ status: "success", message: "Joined waitlist." });
+      } else if (res.status === 409) {
+        const json = await res.json();
+        setServerState({
+          status: "error",
+          message: json?.error || "Email already on the waitlist.",
+        });
+      } else if (res.status === 422) {
+        setServerState({
+          status: "error",
+          message: "Validation failed. Please check your inputs.",
+        });
+      } else {
+        setServerState({ status: "error", message: "Server error." });
+      }
+    } catch (err) {
+      setServerState({ status: "error", message: "Network error." });
+    }
   };
 
   return (
@@ -251,8 +282,14 @@ export function WaitlistForm() {
             </div>
           </div>
 
-          <Button type="submit" className="w-full" disabled={isSubmitting}>
-            {isSubmitting ? "Preparing..." : "Join waitlist"}
+          <Button
+            type="submit"
+            className="w-full"
+            disabled={isSubmitting || serverState.status === "loading"}
+          >
+            {isSubmitting || serverState.status === "loading"
+              ? "Submitting..."
+              : "Join waitlist"}
           </Button>
         </form>
       </Card>
@@ -286,7 +323,31 @@ export function WaitlistForm() {
               </div>
             </div>
 
-            {isPreview && submittedRole ? (
+            {serverState.status === "success" && submittedRole ? (
+              <div className="mt-5 rounded-2xl bg-brand-surface p-4 text-brand-textPrimary">
+                <div className="flex items-center gap-2 text-sm font-semibold text-brand-primary">
+                  <CheckCircle2 className="h-4 w-4" />
+                  You're on the waitlist
+                </div>
+                <p className="mt-2 text-sm text-brand-textSecondary">
+                  You signed up as{" "}
+                  <span className="font-semibold text-brand-dark">
+                    {submittedRole === "customer" ? "Customer" : "Artisan"}
+                  </span>
+                  . We'll be in touch.
+                </p>
+              </div>
+            ) : serverState.status === "error" ? (
+              <div className="mt-5 rounded-2xl bg-red-50 p-4 text-red-700">
+                <div className="flex items-center gap-2 text-sm font-semibold">
+                  <span>Submission error</span>
+                </div>
+                <p className="mt-2 text-sm">
+                  {serverState.message ||
+                    "There was an error submitting your request."}
+                </p>
+              </div>
+            ) : isPreview && submittedRole ? (
               <div className="mt-5 rounded-2xl bg-brand-surface p-4 text-brand-textPrimary">
                 <div className="flex items-center gap-2 text-sm font-semibold text-brand-primary">
                   <CheckCircle2 className="h-4 w-4" />
