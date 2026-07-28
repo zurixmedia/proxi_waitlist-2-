@@ -835,6 +835,10 @@ img, video {
   gap: 2rem;
 }
 
+.gap-1 {
+  gap: .25rem;
+}
+
 .-space-x-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(-.75rem * var(--tw-space-x-reverse));
@@ -1010,6 +1014,10 @@ img, video {
   border-color: #fff3;
 }
 
+.border-brand-accent\/30 {
+  border-color: #62c3d44d;
+}
+
 .bg-\[\#F3F4F6\] {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
@@ -1164,6 +1172,11 @@ img, video {
 
 .bg-white\/5 {
   background-color: #ffffff0d;
+}
+
+.bg-\[\#E3E9EB\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(227 233 235 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gradient-to-b {
@@ -1362,6 +1375,11 @@ img, video {
   padding-bottom: 2rem;
 }
 
+.py-1\.5 {
+  padding-top: .375rem;
+  padding-bottom: .375rem;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -1500,6 +1518,10 @@ img, video {
 
 .tracking-wider {
   letter-spacing: .05em;
+}
+
+.tracking-\[0\.18em\] {
+  letter-spacing: .18em;
 }
 
 .text-\[\#7AD462\] {
@@ -2093,6 +2115,11 @@ img {
     padding-bottom: 5rem;
   }
 
+  .tablet\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
   .tablet\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -2158,6 +2185,10 @@ img {
     gap: 2rem;
   }
 
+  .laptop\:gap-1 {
+    gap: .25rem;
+  }
+
   .laptop\:p-8 {
     padding: 2rem;
   }
@@ -2185,6 +2216,16 @@ img {
   .laptop\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+
+  .laptop\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .laptop\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .laptop\:text-4xl {
