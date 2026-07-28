@@ -22,3 +22,39 @@
 {"timestamp":"02:02:28.685","source":"Browser","level":"WARN","message":"Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior"}
 {"timestamp":"02:02:29.120","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mDetected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\\\"smooth\\\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior\\u001b[39m\" \"\\u001b[2m(file://C:/Users/USER/Desktop/proxi_waitlist(2)\\u001b[22m\""}
 {"timestamp":"02:02:29.128","source":"Browser","level":"WARN","message":"\u001b[33mDetected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior\u001b[39m"}
+{"timestamp":"02:48:33.229","source":"Server","level":"LOG","message":"✓ Compiled in 1233ms"}
+{"timestamp":"02:48:36.913","source":"Server","level":"LOG","message":"○ Compiling /_not-found/page ..."}
+{"timestamp":"02:52:08.442","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"02:53:01.068","source":"Server","level":"LOG","message":"✓ Compiled in 500ms"}
+{"timestamp":"02:53:07.582","source":"Server","level":"LOG","message":"✓ Compiled in 1550ms"}
+{"timestamp":"02:53:17.964","source":"Server","level":"LOG","message":"✓ Compiled in 275ms"}
+{"timestamp":"02:55:11.074","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"02:57:31.338","source":"Server","level":"LOG","message":"✓ Compiled in 227ms"}
+{"timestamp":"02:57:33.670","source":"Browser","level":"ERROR","message":"uncaughtError: ReferenceError: logoUrl is not defined"}
+{"timestamp":"02:57:40.637","source":"Server","level":"LOG","message":"✓ Compiled in 332ms"}
+{"timestamp":"02:57:40.722","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload due to a runtime error."}
+{"timestamp":"02:57:42.864","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"03:11:36.987","source":"Server","level":"LOG","message":"✓ Compiled in 175ms"}
+{"timestamp":"04:12:00.367","source":"Server","level":"LOG","message":"✓ Compiled in 681ms"}
+{"timestamp":"04:12:12.815","source":"Server","level":"LOG","message":"✓ Compiled in 420ms"}
+{"timestamp":"04:12:37.882","source":"Server","level":"LOG","message":"✓ Compiled in 609ms"}
+{"timestamp":"04:14:06.016","source":"Server","level":"LOG","message":"✓ Compiled in 257ms"}
+{"timestamp":"04:14:11.474","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"04:15:30.439","source":"Server","level":"LOG","message":"✓ Compiled in 548ms"}
+{"timestamp":"04:20:42.361","source":"Server","level":"LOG","message":"✓ Compiled in 1133ms"}
+{"timestamp":"04:20:45.022","source":"Browser","level":"ERROR","message":"uncaughtError: ReferenceError: bgClass is not defined"}
+{"timestamp":"04:20:47.786","source":"Server","level":"LOG","message":"✓ Compiled in 1135ms"}
+{"timestamp":"04:20:47.805","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload due to a runtime error."}
+{"timestamp":"04:20:49.384","source":"Server","level":"ERROR","message":"⨯ ReferenceError: bgClass is not defined"}
+{"timestamp":"04:20:49.466","source":"Browser","level":"ERROR","message":"uncaughtError: ReferenceError: bgClass is not defined"}
+{"timestamp":"04:20:53.181","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"04:20:54.896","source":"Browser","level":"ERROR","message":"uncaughtError: ReferenceError: bgClass is not defined"}
+{"timestamp":"04:24:11.403","source":"Server","level":"LOG","message":"✓ Finished writing to filesystem cache in 10.8s"}
+{"timestamp":"04:25:47.986","source":"Server","level":"LOG","message":"✓ Compiled in 254ms"}
+{"timestamp":"04:25:48.121","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload due to a runtime error."}
+{"timestamp":"04:25:53.524","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"04:33:35.777","source":"Server","level":"LOG","message":"✓ Compiled in 4s"}
+{"timestamp":"04:37:58.133","source":"Server","level":"LOG","message":"✓ Compiled in 420ms"}
+{"timestamp":"04:38:05.343","source":"Server","level":"LOG","message":"✓ Compiled in 573ms"}
+{"timestamp":"04:38:18.891","source":"Server","level":"LOG","message":"✓ Compiled in 200ms"}
+{"timestamp":"04:44:25.057","source":"Server","level":"LOG","message":"✓ Compiled in 2.5s"}

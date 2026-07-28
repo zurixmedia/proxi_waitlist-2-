@@ -1,4 +1,5 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/api/waitlist/route": "app/api/waitlist/route.js",
   "/join/artisan/page": "app/join/artisan/page.js",
   "/join/customer/page": "app/join/customer/page.js",

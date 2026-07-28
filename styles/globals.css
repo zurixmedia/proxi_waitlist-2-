@@ -17,7 +17,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #E3E9EB;
+  background-color: #e3e9eb;
   color: #111827;
   font-family: var(--font-manrope), Inter, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;

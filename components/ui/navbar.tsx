@@ -9,9 +9,10 @@ import { cn } from "@/lib/utils";
 interface NavbarProps {
   onOpenRoleModal?: (role: "homeowner" | "artisan") => void;
   right?: React.ReactNode;
+  bgClass?: string;
 }
 
-export function Navbar({ onOpenRoleModal, right }: NavbarProps) {
+export function Navbar({ onOpenRoleModal, right, bgClass }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState("home");
 
@@ -45,7 +46,7 @@ export function Navbar({ onOpenRoleModal, right }: NavbarProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-brand-border/80 bg-brand-surface/90 backdrop-blur-md transition-all">
+    <header className={cn("sticky top-0 z-50 w-full border-b border-brand-border/80 backdrop-blur-md transition-all", bgClass ?? 'bg-brand-surface/90')}>
       <Container className="flex h-20 items-center justify-between py-4">
         {/* Left: Logo */}
         <Logo href="#home" />

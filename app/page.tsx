@@ -21,7 +21,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-brand-background text-brand-textPrimary antialiased selection:bg-brand-accent selection:text-brand-dark">
       {/* Navigation Header */}
-      <Navbar onOpenRoleModal={handleOpenRoleModal} />
+      <Navbar onOpenRoleModal={handleOpenRoleModal} bgClass="bg-[#EEF9FC]" />
 
       {/* Main Landing Sections */}
       <main>

@@ -2,6 +2,8 @@ import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
+const logoSrc = "/logos/logo.svg";
+
 interface LogoProps extends React.HTMLAttributes<HTMLAnchorElement> {
   href?: string;
   variant?: "dark" | "light" | "default";
@@ -19,6 +21,12 @@ export function Logo({
     sm: "text-lg gap-2",
     md: "text-xl gap-2.5",
     lg: "text-2xl gap-3",
+  };
+
+  const logoSizes = {
+    sm: "h-6 w-16 sm:h-7 sm:w-20",
+    md: "h-7 w-20 sm:h-8 sm:w-24",
+    lg: "h-8 w-24 sm:h-10 sm:w-28",
   };
 
   const textColors = {
@@ -39,33 +47,13 @@ export function Logo({
       aria-label="Proxi Home"
       {...props}
     >
-      <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-brand-primary text-white shadow-sm ring-1 ring-brand-primary/20">
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="stroke-current"
-        >
-          <circle
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="#62C3D4"
-            strokeWidth="2.5"
-            fill="none"
-          />
-          <path
-            d="M9 16V8H13.5C14.8807 8 16 9.11929 16 10.5C16 11.8807 14.8807 13 13.5 13H9"
-            stroke="white"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+      <div className={cn("relative flex shrink-0 items-center justify-center", logoSizes[size])}>
+        <img
+          src={logoSrc}
+          alt="Proxi logo"
+          className="h-full w-full object-contain"
+        />
       </div>
-      <span className="font-extrabold tracking-tight">Proxi</span>
     </Link>
   );
 }

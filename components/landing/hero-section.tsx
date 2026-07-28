@@ -4,6 +4,7 @@ import * as React from 'react';
 import Image from 'next/image';
 import { Container } from '@/components/ui/container';
 import { ShieldCheck, Lock } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface HeroSectionProps {
   onOpenRoleModal?: (role: 'homeowner' | 'artisan') => void;
@@ -48,9 +49,17 @@ export function HeroSection({ onOpenRoleModal }: HeroSectionProps) {
               ))}
             </div>
             <p className="text-sm text-brand-textSecondary">
-              Joined by <span className="font-semibold text-brand-dark">3,200+ homeowners</span> and{' '}
-              <span className="font-semibold text-brand-dark">1,800+ vetted pros</span>
+              Joined by <span className="font-semibold text-brand-dark">10+ homeowners</span> and{' '}
+              <span className="font-semibold text-brand-dark">8+ vetted pros</span>
             </p>
+          </div>
+          <div className="mt-4">
+            <Button
+              onClick={() => onOpenRoleModal?.('homeowner')}
+              className="bg-[#498899] hover:bg-[#3e7076] text-white"
+            >
+              Join the Waitlist
+            </Button>
           </div>
         </div>
 
