@@ -1,6 +1,7 @@
 {
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
+  "/api/health/route": "/api/health",
   "/api/waitlist/route": "/api/waitlist",
   "/join/artisan/page": "/join/artisan",
   "/join/customer/page": "/join/customer",
