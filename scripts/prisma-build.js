@@ -15,7 +15,9 @@ try {
     console.log('DATABASE_URL detected — running migrations');
     run('npx prisma migrate deploy');
   } else {
-    console.log('No DATABASE_URL found — skipping migrations (this prevents build failures in preview environments)');
+    console.log(
+      'No DATABASE_URL found — skipping migrations (this prevents build failures in preview environments)',
+    );
   }
 
   process.exit(0);

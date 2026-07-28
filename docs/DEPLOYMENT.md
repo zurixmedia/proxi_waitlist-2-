@@ -13,6 +13,7 @@ node scripts/prisma-build.js && next build
 ```
 
 Notes:
+
 - The helper runs `npx prisma generate` unconditionally.
 - It runs `npx prisma migrate deploy` only when `DATABASE_URL` is set in the environment — this prevents Vercel preview builds from failing when you don't want to apply migrations there.
 - For production, set `DATABASE_URL` in Vercel and migrations will run during the build step. If you prefer to run migrations out-of-band, run `npx prisma migrate deploy` from CI or manually before promoting.
