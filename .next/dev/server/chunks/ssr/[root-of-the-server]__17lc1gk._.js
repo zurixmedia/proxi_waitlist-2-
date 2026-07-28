@@ -69,27 +69,27 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$
 ;
 const metadata = {
     title: {
-        default: "Proxi | Trusted Local Services",
-        template: "%s | Proxi"
+        default: 'Proxi | Trusted Local Services',
+        template: '%s | Proxi'
     },
-    description: "Proxi connects customers with trusted local professionals in a simple, modern marketplace.",
+    description: 'Proxi connects customers with trusted local professionals in a simple, modern marketplace.',
     keywords: [
-        "Proxi",
-        "local services",
-        "trusted professionals",
-        "waitlist"
+        'Proxi',
+        'local services',
+        'trusted professionals',
+        'waitlist'
     ],
-    metadataBase: new URL("https://proxi.example.com"),
+    metadataBase: new URL('https://proxi.example.com'),
     openGraph: {
-        title: "Proxi",
-        description: "Find trusted local professionals with confidence.",
-        type: "website",
-        locale: "en_US"
+        title: 'Proxi',
+        description: 'Find trusted local professionals with confidence.',
+        type: 'website',
+        locale: 'en_US'
     },
     icons: {
-        icon: "/favicon.png",
-        shortcut: "/favicon.png",
-        apple: "/favicon.png"
+        icon: '/favicon.png',
+        shortcut: '/favicon.png',
+        apple: '/favicon.png'
     }
 };
 function RootLayout({ children }) {
@@ -100,12 +100,12 @@ function RootLayout({ children }) {
             children: children
         }, void 0, false, {
             fileName: "[project]/app/layout.tsx",
-            lineNumber: 41,
+            lineNumber: 37,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/layout.tsx",
-        lineNumber: 40,
+        lineNumber: 36,
         columnNumber: 5
     }, this);
 }
