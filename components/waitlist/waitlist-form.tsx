@@ -77,6 +77,8 @@ export function WaitlistForm({
     register,
     handleSubmit,
     watch,
+    setError,
+    clearErrors,
     formState: { errors, isSubmitting },
   } = useForm<WaitlistFormValues>({
     resolver: zodResolver(waitlistSchema),
@@ -96,23 +98,84 @@ export function WaitlistForm({
     setFormStatus("loading");
     setStatusMessage(undefined);
     setSubmittedRole(null);
+    clearErrors();
 
-    await new Promise((resolve) => setTimeout(resolve, 700));
+    const payload = {
+      fullName: data.fullName,
+      email: data.email,
+      role: data.role,
+      location: data.location,
+      ...(data.role === "artisan" && data.category
+        ? { trade: data.category }
+        : {}),
+    };
 
-    if (data.email.toLowerCase().includes("error")) {
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = (await response.json().catch(() => null)) as {
+        success?: boolean;
+        error?: {
+          code?: string;
+          message?: string;
+          details?: {
+            fieldErrors?: Record<string, string[]>;
+            formErrors?: string[];
+          };
+        };
+      } | null;
+
+      if (!response.ok) {
+        const errorCode = result?.error?.code;
+        const fieldErrors = result?.error?.details?.fieldErrors ?? {};
+        const formErrors = result?.error?.details?.formErrors ?? [];
+
+        if (response.status === 422 && Object.keys(fieldErrors).length > 0) {
+          Object.entries(fieldErrors).forEach(([field, messages]) => {
+            const message = messages?.[0] ?? "Please review this field.";
+
+            if (field === "trade") {
+              setError("category", { type: "server", message });
+            } else if (field === "fullName" || field === "email" || field === "role" || field === "location" || field === "category") {
+              setError(field as keyof WaitlistFormValues, {
+                type: "server",
+                message,
+              });
+            }
+          });
+        }
+
+        if (errorCode === "DUPLICATE_EMAIL") {
+          setError("email", {
+            type: "server",
+            message: result?.error?.message ?? "This email is already on the waitlist.",
+          });
+        }
+
+        setFormStatus("error");
+        setStatusMessage(
+          formErrors[0] ??
+            result?.error?.message ??
+            "We could not process your request. Please try again later.",
+        );
+        return;
+      }
+
+      setSubmittedRole(data.role);
+      setFormStatus("success");
+
+      if (onSuccess) {
+        onSuccess(data);
+      }
+    } catch {
       setFormStatus("error");
-      setStatusMessage(
-        "There was an issue preparing your preview. Please update your email and try again.",
-      );
-      return;
-    }
-
-    setSubmittedRole(data.role);
-    setFormStatus("success");
-
-    if (onSuccess) {
-      onSuccess(data);
-      return;
+      setStatusMessage("We could not process your request. Please try again later.");
     }
   };
 
@@ -307,7 +370,7 @@ export function WaitlistForm({
           >
             {isSubmitting || formStatus === "loading"
               ? "Loading..."
-              : "Preview waitlist"}
+              : "Join waitlist"}
           </Button>
         </form>
       </Card>
@@ -320,11 +383,10 @@ export function WaitlistForm({
           <div className="space-y-4">
             <Badge variant="dark">What you get</Badge>
             <Typography as="h3" variant="h3" className="text-white">
-              Frontend validation preview
+              Secure waitlist submission
             </Typography>
             <Typography variant="body" className="text-brand-accent">
-              This is a client-only experience with no API, no database, and no
-              real submission.
+              Your details are sent to the live waitlist API and saved only after the backend confirms the database insert.
             </Typography>
           </div>
 
@@ -348,10 +410,10 @@ export function WaitlistForm({
                     icon="loading"
                     className="h-4 w-4 text-white animate-spin"
                   />
-                  Generating preview
+                  Submitting your request
                 </div>
                 <p className="mt-2 text-sm text-white/80">
-                  Validating your fields and preparing the preview state.
+                  Sending your details to the live waitlist backend.
                 </p>
               </div>
             ) : null}
@@ -359,7 +421,7 @@ export function WaitlistForm({
             {formStatus === "error" ? (
               <div className="mt-5 rounded-2xl bg-red-50 p-4 text-red-700">
                 <div className="flex items-center gap-2 text-sm font-semibold">
-                  <span>Validation error</span>
+                  <span>Submission error</span>
                 </div>
                 <p className="mt-2 text-sm">{statusMessage}</p>
               </div>
@@ -369,10 +431,10 @@ export function WaitlistForm({
               <div className="mt-5 rounded-2xl bg-brand-surface p-4 text-brand-textPrimary">
                 <div className="flex items-center gap-2 text-sm font-semibold text-brand-primary">
                   <CheckCircle2 className="h-4 w-4" aria-hidden />
-                  Success preview
+                  Submission confirmed
                 </div>
                 <p className="mt-2 text-sm text-brand-textSecondary">
-                  Ready as a{" "}
+                  You&apos;re now registered as a{" "}
                   <span className="font-semibold text-brand-dark">
                     {submittedRole === "customer" ? "Customer" : "Artisan"}
                   </span>
