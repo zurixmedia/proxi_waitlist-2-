@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
   icons: {
-    icon: "/icons/favicon.ico",
-    shortcut: "/icons/favicon.ico",
-    apple: "/icons/apple-touch-icon.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 
