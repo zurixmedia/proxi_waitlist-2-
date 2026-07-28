@@ -1,7 +1,7 @@
-"use server";
+'use server';
 
-import { NextResponse } from "next/server";
-import { createWaitlistEntry, WaitlistServiceError } from "@/services/waitlist.service";
+import { NextResponse } from 'next/server';
+import { createWaitlistEntry, WaitlistServiceError } from '@/services/waitlist.service';
 
 export async function POST(req: Request) {
   let body: unknown;
@@ -13,8 +13,8 @@ export async function POST(req: Request) {
       {
         success: false,
         error: {
-          code: "INVALID_JSON",
-          message: "Request body must be valid JSON.",
+          code: 'INVALID_JSON',
+          message: 'Request body must be valid JSON.',
         },
       },
       { status: 400 },
@@ -33,11 +33,7 @@ export async function POST(req: Request) {
   } catch (error) {
     if (error instanceof WaitlistServiceError) {
       const status =
-        error.code === "VALIDATION_ERROR"
-          ? 422
-          : error.code === "DUPLICATE_EMAIL"
-            ? 409
-            : 500;
+        error.code === 'VALIDATION_ERROR' ? 422 : error.code === 'DUPLICATE_EMAIL' ? 409 : 500;
 
       return NextResponse.json(
         {
@@ -52,13 +48,13 @@ export async function POST(req: Request) {
       );
     }
 
-    console.error("waitlist api error", error);
+    console.error('waitlist api error', error);
     return NextResponse.json(
       {
         success: false,
         error: {
-          code: "INTERNAL_SERVER_ERROR",
-          message: "We could not process your request. Please try again later.",
+          code: 'INTERNAL_SERVER_ERROR',
+          message: 'We could not process your request. Please try again later.',
         },
       },
       { status: 500 },

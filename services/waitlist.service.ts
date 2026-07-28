@@ -17,7 +17,8 @@ export type WaitlistEntry = {
   updatedAt: string;
 };
 
-export type WaitlistServiceErrorCode = 'VALIDATION_ERROR' | 'DUPLICATE_EMAIL' | 'INTERNAL_SERVER_ERROR';
+export type WaitlistServiceErrorCode =
+  'VALIDATION_ERROR' | 'DUPLICATE_EMAIL' | 'INTERNAL_SERVER_ERROR';
 
 export class WaitlistServiceError extends Error {
   constructor(
@@ -32,7 +33,12 @@ export class WaitlistServiceError extends Error {
 
 const waitlistInputSchema = z
   .object({
-    fullName: z.string().trim().min(2, 'Please enter your full name.').max(80).transform(sanitizeText),
+    fullName: z
+      .string()
+      .trim()
+      .min(2, 'Please enter your full name.')
+      .max(80)
+      .transform(sanitizeText),
     email: z.string().trim().toLowerCase().email('Please enter a valid email address.').max(254),
     phoneNumber: z
       .string()
@@ -42,7 +48,12 @@ const waitlistInputSchema = z
       .or(z.literal(''))
       .transform((value) => optionalSanitizedText(value)),
     role: z.enum(['customer', 'artisan'], { message: 'Please select your role.' }),
-    location: z.string().trim().min(2, 'Please enter your location.').max(120).transform(sanitizeText),
+    location: z
+      .string()
+      .trim()
+      .min(2, 'Please enter your location.')
+      .max(120)
+      .transform(sanitizeText),
     trade: z
       .string()
       .trim()
@@ -65,7 +76,11 @@ const waitlistInputSchema = z
 export type WaitlistEntryInput = z.infer<typeof waitlistInputSchema>;
 
 function sanitizeText(value: string): string {
-  return value.replace(/[<>]/g, '').replace(/[\u0000-\u001f\u007f]/g, '').replace(/\s+/g, ' ').trim();
+  return value
+    .replace(/[<>]/g, '')
+    .replace(/[\u0000-\u001f\u007f]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function optionalSanitizedText(value: string | undefined): string | undefined {
@@ -134,6 +149,9 @@ export async function createWaitlistEntry(input: unknown): Promise<WaitlistEntry
       throw new WaitlistServiceError('DUPLICATE_EMAIL', 'Email already on the waitlist.');
     }
 
-    throw new WaitlistServiceError('INTERNAL_SERVER_ERROR', 'We could not process your request. Please try again later.');
+    throw new WaitlistServiceError(
+      'INTERNAL_SERVER_ERROR',
+      'We could not process your request. Please try again later.',
+    );
   }
 }
