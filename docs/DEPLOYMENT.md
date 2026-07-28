@@ -4,13 +4,18 @@ Deployment checklist for Vercel
   - Key: `DATABASE_URL`
   - Value: `postgresql://USER:PASSWORD@HOST:PORT/DATABASE` (include any query params required by your provider)
 
-- Build command (Vercel default): runs `package.json` `build` script. We added Prisma steps to the build so migrations will run:
+Build command (Vercel default): runs `package.json` `build` script. To avoid failing builds when a database is not configured for preview deployments, the repo now uses a small helper script that always generates the Prisma client and only runs migrations when `DATABASE_URL` is present.
 
-  ```bash
-  npx prisma generate && npx prisma migrate deploy && next build
-  ```
+Recommended build (already configured):
 
-- If you prefer to run migrations outside the build step (recommended for controlled deploys), remove `prisma migrate deploy` from the build and run migrations from CI or manually before promoting a deployment.
+```bash
+node scripts/prisma-build.js && next build
+```
+
+Notes:
+- The helper runs `npx prisma generate` unconditionally.
+- It runs `npx prisma migrate deploy` only when `DATABASE_URL` is set in the environment — this prevents Vercel preview builds from failing when you don't want to apply migrations there.
+- For production, set `DATABASE_URL` in Vercel and migrations will run during the build step. If you prefer to run migrations out-of-band, run `npx prisma migrate deploy` from CI or manually before promoting.
 
 - Recommended environment variables in Vercel:
   - `DATABASE_URL` (required)
