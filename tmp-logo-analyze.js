@@ -20,7 +20,9 @@ const width = ihdr.data.readUInt32BE(0);
 const height = ihdr.data.readUInt32BE(4);
 const bitDepth = ihdr.data.readUInt8(8);
 const colorType = ihdr.data.readUInt8(9);
-const idat = Buffer.concat(chunks.filter((chunk) => chunk.type === 'IDAT').map((chunk) => chunk.data));
+const idat = Buffer.concat(
+  chunks.filter((chunk) => chunk.type === 'IDAT').map((chunk) => chunk.data),
+);
 const raw = zlib.inflateSync(idat);
 const bytesPerPixel = colorType === 6 ? 4 : colorType === 2 ? 3 : 1;
 const stride = bytesPerPixel * width + 1;

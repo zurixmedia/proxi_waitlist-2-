@@ -29,7 +29,16 @@ if (compression !== 0 || filter !== 0 || interlace !== 0) {
 }
 const idat = Buffer.concat(chunks.filter((c) => c.type === 'IDAT').map((c) => c.data));
 const raw = zlib.inflateSync(idat);
-const bytesPerPixel = colorType === 6 ? 4 : colorType === 2 ? 3 : colorType === 0 ? 1 : (() => { throw new Error('Unsupported color type ' + colorType); })();
+const bytesPerPixel =
+  colorType === 6
+    ? 4
+    : colorType === 2
+      ? 3
+      : colorType === 0
+        ? 1
+        : (() => {
+            throw new Error('Unsupported color type ' + colorType);
+          })();
 const stride = 1 + bytesPerPixel * width;
 const pixelData = Buffer.alloc(height * width * bytesPerPixel);
 const palette = new Map();
@@ -37,7 +46,8 @@ let total = 0;
 for (let y = 0; y < height; y++) {
   const filterType = raw[y * stride];
   const row = raw.slice(y * stride + 1, y * stride + stride);
-  const prevRow = y === 0 ? null : pixelData.slice((y - 1) * width * bytesPerPixel, y * width * bytesPerPixel);
+  const prevRow =
+    y === 0 ? null : pixelData.slice((y - 1) * width * bytesPerPixel, y * width * bytesPerPixel);
   const recon = Buffer.alloc(width * bytesPerPixel);
   const bpp = bytesPerPixel;
   const paeth = (a, b, c) => {
