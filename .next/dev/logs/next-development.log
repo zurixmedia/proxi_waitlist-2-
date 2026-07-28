@@ -88,3 +88,6 @@
 {"timestamp":"22:34:47.297","source":"Server","level":"LOG","message":"✓ Finished writing to filesystem cache in 13.9s"}
 {"timestamp":"22:38:17.545","source":"Server","level":"LOG","message":"✓ Compiled in 2.2s"}
 {"timestamp":"22:38:29.718","source":"Server","level":"LOG","message":"✓ Finished writing to filesystem cache in 10.0s"}
+{"timestamp":"22:43:36.984","source":"Server","level":"LOG","message":"✓ Compiled in 1713ms"}
+{"timestamp":"22:45:13.308","source":"Server","level":"LOG","message":"✓ Compiled in 1308ms"}
+{"timestamp":"22:46:12.420","source":"Server","level":"LOG","message":"✓ Compiled in 1157ms"}

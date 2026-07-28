@@ -1288,6 +1288,12 @@ img, video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-brand-accent\/5 {
+  --tw-gradient-from: #62c3d40d var(--tw-gradient-from-position);
+  --tw-gradient-to: #62c3d400 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .via-\[\#266879\] {
   --tw-gradient-to: #26687900  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #266879 var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -1316,6 +1322,10 @@ img, video {
 
 .to-white {
   --tw-gradient-to: #fff var(--tw-gradient-to-position);
+}
+
+.to-transparent\/90 {
+  --tw-gradient-to: #000000e6 var(--tw-gradient-to-position);
 }
 
 .stroke-current {

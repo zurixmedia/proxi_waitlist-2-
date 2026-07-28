@@ -1,37 +1,40 @@
-import * as React from "react";
-import { Container } from "@/components/ui/container";
-import { ShieldCheck, Receipt, Lock, MapPin } from "lucide-react";
+import * as React from 'react';
+import { Container } from '@/components/ui/container';
+import { ShieldCheck, Receipt, Lock, MapPin } from 'lucide-react';
 
 export function WhyProxiSection() {
   const features = [
     {
       icon: ShieldCheck,
-      title: "100% vetted pros",
+      title: '100% vetted pros',
       description:
-        "Every professional passes background checks, license verification, and portfolio review before joining Proxi.",
+        'Every professional passes background checks, license verification, and portfolio review before joining Proxi.',
     },
     {
       icon: Receipt,
-      title: "Clear, upfront quotes",
+      title: 'Clear, upfront quotes',
       description:
-        "Compare itemized quotes with no hidden fees. Know exactly what you pay before work starts.",
+        'Compare itemized quotes with no hidden fees. Know exactly what you pay before work starts.',
     },
     {
       icon: Lock,
-      title: "Escrow payment safety",
+      title: 'Escrow payment safety',
       description:
-        "Your payment is held safely until you are satisfied. Release funds only when the job is done right.",
+        'Your payment is held safely until you are satisfied. Release funds only when the job is done right.',
     },
     {
       icon: MapPin,
-      title: "Instant local matching",
+      title: 'Instant local matching',
       description:
-        "Connect with skilled professionals in your immediate neighborhood. Fast responses, real relationships.",
+        'Connect with skilled professionals in your immediate neighborhood. Fast responses, real relationships.',
     },
   ];
 
   return (
-    <section id="why-proxi" className="section-spacing bg-brand-background">
+    <section
+      id="why-proxi"
+      className="section-spacing bg-gradient-to-b from-brand-accent/5 to-transparent/90"
+    >
       <Container>
         <div id="how-it-works" className="mx-auto max-w-3xl text-center">
           <span className="text-xs font-bold uppercase tracking-[0.28em] text-brand-primary">
