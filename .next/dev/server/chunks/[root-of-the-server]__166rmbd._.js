@@ -45,14 +45,18 @@ module.exports = mod;
 "use strict";
 
 __turbopack_context__.s([
-    "prisma",
-    ()=>prisma
+    "getPrisma",
+    ()=>getPrisma
 ]);
 var __TURBOPACK__imported__module__$5b$externals$5d2f40$prisma$2f$client__$5b$external$5d$__$2840$prisma$2f$client$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$prisma$2f$client$29$__ = __turbopack_context__.i("[externals]/@prisma/client [external] (@prisma/client, cjs, [project]/node_modules/@prisma/client)");
 ;
-const prisma = globalThis.prisma ?? new __TURBOPACK__imported__module__$5b$externals$5d2f40$prisma$2f$client__$5b$external$5d$__$2840$prisma$2f$client$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$prisma$2f$client$29$__["PrismaClient"]();
-if ("TURBOPACK compile-time truthy", 1) {
-    globalThis.prisma = prisma;
+function getPrisma() {
+    if (globalThis.prisma) return globalThis.prisma;
+    const client = new __TURBOPACK__imported__module__$5b$externals$5d2f40$prisma$2f$client__$5b$external$5d$__$2840$prisma$2f$client$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f40$prisma$2f$client$29$__["PrismaClient"]();
+    if ("TURBOPACK compile-time truthy", 1) {
+        globalThis.prisma = client;
+    }
+    return client;
 }
 }),
 "[project]/services/waitlist.service.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
@@ -127,7 +131,8 @@ function mapPrismaEntry(entry) {
     };
 }
 async function findByEmail(email) {
-    const entry = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].waitlistEntry.findUnique({
+    const prisma = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getPrisma"])();
+    const entry = await prisma.waitlistEntry.findUnique({
         where: {
             email
         }
@@ -145,7 +150,8 @@ async function createWaitlistEntry(input) {
         throw new WaitlistServiceError('DUPLICATE_EMAIL', 'Email already on the waitlist.');
     }
     try {
-        const created = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].waitlistEntry.create({
+        const prisma = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getPrisma"])();
+        const created = await prisma.waitlistEntry.create({
             data: {
                 fullName,
                 email,

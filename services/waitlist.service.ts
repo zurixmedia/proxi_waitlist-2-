@@ -1,6 +1,6 @@
 import { Prisma, type WaitlistEntry as PrismaWaitlistEntry } from '@prisma/client';
 import { z } from 'zod';
-import { prisma } from '@/lib/prisma';
+import { getPrisma } from '@/lib/prisma';
 
 export type WaitlistRole = 'customer' | 'artisan';
 
@@ -107,6 +107,7 @@ function mapPrismaEntry(entry: PrismaWaitlistEntry): WaitlistEntry {
 }
 
 export async function findByEmail(email: string): Promise<WaitlistEntry | null> {
+  const prisma = getPrisma();
   const entry = await prisma.waitlistEntry.findUnique({
     where: { email },
   });
@@ -131,6 +132,7 @@ export async function createWaitlistEntry(input: unknown): Promise<WaitlistEntry
   }
 
   try {
+    const prisma = getPrisma();
     const created = await prisma.waitlistEntry.create({
       data: {
         fullName,
