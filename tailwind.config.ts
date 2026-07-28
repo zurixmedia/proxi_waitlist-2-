@@ -23,7 +23,7 @@ export default {
           footerDark: "#0B1A1E",
           footerBorder: "#1A3540",
           footerInput: "#132B32",
-          background: "#F8FBFC",
+          background: "#E3E9EB",
           surface: "#FFFFFF",
           border: "#E5E7EB",
           textPrimary: "#111827",
