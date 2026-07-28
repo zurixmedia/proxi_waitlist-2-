@@ -431,7 +431,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-client] (ecmascript) <export default as Sparkles>");
 ;
 var _s = __turbopack_context__.k.signature();
-"use client";
+'use client';
 ;
 ;
 ;
@@ -446,54 +446,54 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 const serviceCategories = [
-    "Plumbing",
-    "Electrical",
-    "Painting",
-    "Cleaning",
-    "Carpentry",
-    "AC Repair",
-    "Appliance Repair",
-    "Gardening"
+    'Plumbing',
+    'Electrical',
+    'Painting',
+    'Cleaning',
+    'Carpentry',
+    'AC Repair',
+    'Appliance Repair',
+    'Gardening'
 ];
 const waitlistSchema = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].object({
-    fullName: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().trim().min(2, "Please enter your full name."),
-    email: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().trim().email("Please enter a valid email address."),
+    fullName: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().trim().min(2, 'Please enter your full name.'),
+    email: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().trim().email('Please enter a valid email address.'),
     role: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].enum([
-        "customer",
-        "artisan"
-    ], "Please select your role."),
-    location: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().trim().min(2, "Please enter your location."),
+        'customer',
+        'artisan'
+    ], 'Please select your role.'),
+    location: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().trim().min(2, 'Please enter your location.'),
     category: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().trim().optional()
 }).superRefine((value, ctx)=>{
-    if (value.role === "artisan" && !value.category) {
+    if (value.role === 'artisan' && !value.category) {
         ctx.addIssue({
             code: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].ZodIssueCode.custom,
             path: [
-                "category"
+                'category'
             ],
-            message: "Please select your service category."
+            message: 'Please select your service category.'
         });
     }
 });
 function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
     _s();
     const [submittedRole, setSubmittedRole] = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"](null);
-    const [formStatus, setFormStatus] = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"]("idle");
+    const [formStatus, setFormStatus] = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"]('idle');
     const [statusMessage, setStatusMessage] = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"](undefined);
     const { register, handleSubmit, watch, setError, clearErrors, formState: { errors, isSubmitting } } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useForm"])({
         resolver: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$hookform$2f$resolvers$2f$zod$2f$dist$2f$zod$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["zodResolver"])(waitlistSchema),
         defaultValues: {
-            fullName: "",
-            email: "",
+            fullName: '',
+            email: '',
             role: defaultRole,
-            location: "",
-            category: ""
+            location: '',
+            category: ''
         },
-        mode: "onTouched"
+        mode: 'onTouched'
     });
-    const selectedRole = watch("role") ?? defaultRole;
+    const selectedRole = watch('role') ?? defaultRole;
     const onSubmit = async (data)=>{
-        setFormStatus("loading");
+        setFormStatus('loading');
         setStatusMessage(undefined);
         setSubmittedRole(null);
         clearErrors();
@@ -502,15 +502,15 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
             email: data.email,
             role: data.role,
             location: data.location,
-            ...data.role === "artisan" && data.category ? {
+            ...data.role === 'artisan' && data.category ? {
                 trade: data.category
             } : {}
         };
         try {
-            const response = await fetch("/api/waitlist", {
-                method: "POST",
+            const response = await fetch('/api/waitlist', {
+                method: 'POST',
                 headers: {
-                    "Content-Type": "application/json"
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(payload)
             });
@@ -521,41 +521,41 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                 const formErrors = result?.error?.details?.formErrors ?? [];
                 if (response.status === 422 && Object.keys(fieldErrors).length > 0) {
                     Object.entries(fieldErrors).forEach(([field, messages])=>{
-                        const message = messages?.[0] ?? "Please review this field.";
-                        if (field === "trade") {
-                            setError("category", {
-                                type: "server",
+                        const message = messages?.[0] ?? 'Please review this field.';
+                        if (field === 'trade') {
+                            setError('category', {
+                                type: 'server',
                                 message
                             });
-                        } else if (field === "fullName" || field === "email" || field === "role" || field === "location" || field === "category") {
+                        } else if (field === 'fullName' || field === 'email' || field === 'role' || field === 'location' || field === 'category') {
                             setError(field, {
-                                type: "server",
+                                type: 'server',
                                 message
                             });
                         }
                     });
                 }
-                if (errorCode === "DUPLICATE_EMAIL") {
-                    setError("email", {
-                        type: "server",
-                        message: result?.error?.message ?? "This email is already on the waitlist."
+                if (errorCode === 'DUPLICATE_EMAIL') {
+                    setError('email', {
+                        type: 'server',
+                        message: result?.error?.message ?? 'This email is already on the waitlist.'
                     });
                 }
-                setFormStatus("error");
-                setStatusMessage(formErrors[0] ?? result?.error?.message ?? "We could not process your request. Please try again later.");
+                setFormStatus('error');
+                setStatusMessage(formErrors[0] ?? result?.error?.message ?? 'We could not process your request. Please try again later.');
                 return;
             }
             setSubmittedRole(data.role);
-            setFormStatus("success");
+            setFormStatus('success');
             if (onSuccess) {
                 onSuccess(data);
             }
         } catch  {
-            setFormStatus("error");
-            setStatusMessage("We could not process your request. Please try again later.");
+            setFormStatus('error');
+            setStatusMessage('We could not process your request. Please try again later.');
         }
     };
-    const inputErrorClass = (error)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])(error ? "border-brand-error focus:border-brand-error focus:ring-brand-error/40" : "");
+    const inputErrorClass = (error)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])(error ? 'border-brand-error focus:border-brand-error focus:ring-brand-error/40' : '');
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "grid gap-8 laptop:grid-cols-[0.95fr_1.05fr]",
         children: [
@@ -571,7 +571,7 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                 children: "Early access"
                             }, void 0, false, {
                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                lineNumber: 196,
+                                lineNumber: 181,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$typography$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Typography"], {
@@ -581,7 +581,7 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                 children: "Join the Proxi waitlist"
                             }, void 0, false, {
                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                lineNumber: 197,
+                                lineNumber: 182,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$typography$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Typography"], {
@@ -589,13 +589,13 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                 children: "Sign up for early updates and access to trusted local artisans or customers in your area."
                             }, void 0, false, {
                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                lineNumber: 200,
+                                lineNumber: 185,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                        lineNumber: 195,
+                        lineNumber: 180,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -615,7 +615,7 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                 children: "Full name"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 213,
+                                                lineNumber: 194,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -623,10 +623,10 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                 placeholder: "Amina Okafor",
                                                 "aria-invalid": Boolean(errors.fullName),
                                                 className: inputErrorClass(errors.fullName),
-                                                ...register("fullName")
+                                                ...register('fullName')
                                             }, void 0, false, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 219,
+                                                lineNumber: 197,
                                                 columnNumber: 15
                                             }, this),
                                             errors.fullName ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -634,13 +634,13 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                 children: errors.fullName.message
                                             }, void 0, false, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 227,
+                                                lineNumber: 205,
                                                 columnNumber: 17
                                             }, this) : null
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                        lineNumber: 212,
+                                        lineNumber: 193,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -652,7 +652,7 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                 children: "Email address"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 234,
+                                                lineNumber: 210,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -662,25 +662,25 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                         className: "pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-textSecondary"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                        lineNumber: 241,
+                                                        lineNumber: 214,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
                                                         id: "email",
                                                         type: "email",
                                                         placeholder: "you@example.com",
-                                                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("pl-10", inputErrorClass(errors.email)),
+                                                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])('pl-10', inputErrorClass(errors.email)),
                                                         "aria-invalid": Boolean(errors.email),
-                                                        ...register("email")
+                                                        ...register('email')
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                        lineNumber: 242,
+                                                        lineNumber: 215,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 240,
+                                                lineNumber: 213,
                                                 columnNumber: 15
                                             }, this),
                                             errors.email ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -688,13 +688,13 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                 children: errors.email.message
                                             }, void 0, false, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 252,
+                                                lineNumber: 225,
                                                 columnNumber: 17
                                             }, this) : null
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                        lineNumber: 233,
+                                        lineNumber: 209,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -706,7 +706,7 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                 children: "Location"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 259,
+                                                lineNumber: 230,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -716,24 +716,24 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                         className: "pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-textSecondary"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                        lineNumber: 266,
+                                                        lineNumber: 234,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
                                                         id: "location",
                                                         placeholder: "Benin City",
-                                                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("pl-10", inputErrorClass(errors.location)),
+                                                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])('pl-10', inputErrorClass(errors.location)),
                                                         "aria-invalid": Boolean(errors.location),
-                                                        ...register("location")
+                                                        ...register('location')
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                        lineNumber: 267,
+                                                        lineNumber: 235,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 265,
+                                                lineNumber: 233,
                                                 columnNumber: 15
                                             }, this),
                                             errors.location ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -741,13 +741,13 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                 children: errors.location.message
                                             }, void 0, false, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 276,
+                                                lineNumber: 244,
                                                 columnNumber: 17
                                             }, this) : null
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                        lineNumber: 258,
+                                        lineNumber: 229,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -758,24 +758,24 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                 children: "I am joining as"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 283,
+                                                lineNumber: 249,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "grid gap-3 sm:grid-cols-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("flex cursor-pointer items-center gap-3 rounded-2xl border p-4 transition", selectedRole === "customer" ? "border-brand-primary bg-brand-tealLight" : "border-brand-border bg-brand-background"),
+                                                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])('flex cursor-pointer items-center gap-3 rounded-2xl border p-4 transition', selectedRole === 'customer' ? 'border-brand-primary bg-brand-tealLight' : 'border-brand-border bg-brand-background'),
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                                 type: "radio",
                                                                 value: "customer",
                                                                 className: "h-4 w-4 accent-brand-primary",
                                                                 disabled: fixedRole,
-                                                                ...register("role")
+                                                                ...register('role')
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                                lineNumber: 295,
+                                                                lineNumber: 261,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -785,34 +785,34 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                                         className: "h-4 w-4 text-brand-primary"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                                        lineNumber: 303,
+                                                                        lineNumber: 269,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     "Customer"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                                lineNumber: 302,
+                                                                lineNumber: 268,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                        lineNumber: 287,
+                                                        lineNumber: 253,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("flex cursor-pointer items-center gap-3 rounded-2xl border p-4 transition", selectedRole === "artisan" ? "border-brand-primary bg-brand-tealLight" : "border-brand-border bg-brand-background"),
+                                                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])('flex cursor-pointer items-center gap-3 rounded-2xl border p-4 transition', selectedRole === 'artisan' ? 'border-brand-primary bg-brand-tealLight' : 'border-brand-border bg-brand-background'),
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                                 type: "radio",
                                                                 value: "artisan",
                                                                 className: "h-4 w-4 accent-brand-primary",
                                                                 disabled: fixedRole,
-                                                                ...register("role")
+                                                                ...register('role')
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                                lineNumber: 316,
+                                                                lineNumber: 282,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -822,26 +822,26 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                                         className: "h-4 w-4 text-brand-primary"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                                        lineNumber: 324,
+                                                                        lineNumber: 290,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     "Artisan"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                                lineNumber: 323,
+                                                                lineNumber: 289,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                        lineNumber: 308,
+                                                        lineNumber: 274,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 286,
+                                                lineNumber: 252,
                                                 columnNumber: 15
                                             }, this),
                                             errors.role ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -849,16 +849,16 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                 children: errors.role.message
                                             }, void 0, false, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 330,
+                                                lineNumber: 296,
                                                 columnNumber: 17
                                             }, this) : null
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                        lineNumber: 282,
+                                        lineNumber: 248,
                                         columnNumber: 13
                                     }, this),
-                                    selectedRole === "artisan" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    selectedRole === 'artisan' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "space-y-2 tablet:col-span-2",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -867,21 +867,21 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                 children: "Service category"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 338,
+                                                lineNumber: 302,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
                                                 id: "category",
                                                 className: inputErrorClass(errors.category),
                                                 "aria-invalid": Boolean(errors.category),
-                                                ...register("category"),
+                                                ...register('category'),
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "",
                                                         children: "Select category"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                        lineNumber: 350,
+                                                        lineNumber: 311,
                                                         columnNumber: 19
                                                     }, this),
                                                     serviceCategories.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -889,13 +889,13 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                             children: category
                                                         }, category, false, {
                                                             fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                            lineNumber: 352,
+                                                            lineNumber: 313,
                                                             columnNumber: 21
                                                         }, this))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 344,
+                                                lineNumber: 305,
                                                 columnNumber: 17
                                             }, this),
                                             errors.category ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -903,41 +903,41 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                 children: errors.category.message
                                             }, void 0, false, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 358,
+                                                lineNumber: 319,
                                                 columnNumber: 19
                                             }, this) : null
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                        lineNumber: 337,
+                                        lineNumber: 301,
                                         columnNumber: 15
                                     }, this) : null
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                lineNumber: 211,
+                                lineNumber: 192,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                 type: "submit",
                                 className: "w-full",
-                                disabled: isSubmitting || formStatus === "loading",
-                                children: isSubmitting || formStatus === "loading" ? "Loading..." : "Join waitlist"
+                                disabled: isSubmitting || formStatus === 'loading',
+                                children: isSubmitting || formStatus === 'loading' ? 'Loading...' : 'Join waitlist'
                             }, void 0, false, {
                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                lineNumber: 366,
+                                lineNumber: 325,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                        lineNumber: 206,
+                        lineNumber: 191,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                lineNumber: 191,
+                lineNumber: 176,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -954,7 +954,7 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                     children: "What you get"
                                 }, void 0, false, {
                                     fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                    lineNumber: 384,
+                                    lineNumber: 341,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$typography$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Typography"], {
@@ -964,7 +964,7 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                     children: "Secure waitlist submission"
                                 }, void 0, false, {
                                     fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                    lineNumber: 385,
+                                    lineNumber: 342,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$typography$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Typography"], {
@@ -973,13 +973,13 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                     children: "Your details are sent to the live waitlist API and saved only after the backend confirms the database insert."
                                 }, void 0, false, {
                                     fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                    lineNumber: 388,
+                                    lineNumber: 345,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                            lineNumber: 383,
+                            lineNumber: 340,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -995,12 +995,12 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                 "aria-hidden": true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 396,
+                                                lineNumber: 354,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                            lineNumber: 395,
+                                            lineNumber: 353,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1010,7 +1010,7 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                     children: "Preview mode"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                    lineNumber: 399,
+                                                    lineNumber: 357,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1018,22 +1018,22 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                     children: "Loading, error, and success states render inside the UI."
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                    lineNumber: 400,
+                                                    lineNumber: 358,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                            lineNumber: 398,
+                                            lineNumber: 356,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                    lineNumber: 394,
+                                    lineNumber: 352,
                                     columnNumber: 13
                                 }, this),
-                                formStatus === "loading" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                formStatus === 'loading' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "mt-5 rounded-2xl border border-white/20 bg-white/10 p-4 text-brand-accent",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1044,14 +1044,14 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                     className: "h-4 w-4 text-white animate-spin"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                    lineNumber: 409,
+                                                    lineNumber: 367,
                                                     columnNumber: 19
                                                 }, this),
                                                 "Submitting your request"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                            lineNumber: 408,
+                                            lineNumber: 366,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1059,16 +1059,16 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                             children: "Sending your details to the live waitlist backend."
                                         }, void 0, false, {
                                             fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                            lineNumber: 415,
+                                            lineNumber: 370,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                    lineNumber: 407,
+                                    lineNumber: 365,
                                     columnNumber: 15
                                 }, this) : null,
-                                formStatus === "error" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                formStatus === 'error' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "mt-5 rounded-2xl bg-red-50 p-4 text-red-700",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1077,12 +1077,12 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                 children: "Submission error"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                lineNumber: 424,
+                                                lineNumber: 379,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                            lineNumber: 423,
+                                            lineNumber: 378,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1090,16 +1090,16 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                             children: statusMessage
                                         }, void 0, false, {
                                             fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                            lineNumber: 426,
+                                            lineNumber: 381,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                    lineNumber: 422,
+                                    lineNumber: 377,
                                     columnNumber: 15
                                 }, this) : null,
-                                formStatus === "success" && submittedRole ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                formStatus === 'success' && submittedRole ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "mt-5 rounded-2xl bg-brand-surface p-4 text-brand-textPrimary",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1110,67 +1110,67 @@ function WaitlistForm({ defaultRole, fixedRole = false, onSuccess }) {
                                                     "aria-hidden": true
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                    lineNumber: 433,
+                                                    lineNumber: 388,
                                                     columnNumber: 19
                                                 }, this),
                                                 "Submission confirmed"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                            lineNumber: 432,
+                                            lineNumber: 387,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "mt-2 text-sm text-brand-textSecondary",
                                             children: [
                                                 "You're now registered as a",
-                                                " ",
+                                                ' ',
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: "font-semibold text-brand-dark",
-                                                    children: submittedRole === "customer" ? "Customer" : "Artisan"
+                                                    children: submittedRole === 'customer' ? 'Customer' : 'Artisan'
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                                    lineNumber: 438,
+                                                    lineNumber: 393,
                                                     columnNumber: 19
                                                 }, this),
                                                 "."
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                            lineNumber: 436,
+                                            lineNumber: 391,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                                    lineNumber: 431,
+                                    lineNumber: 386,
                                     columnNumber: 15
                                 }, this) : null
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                            lineNumber: 393,
+                            lineNumber: 351,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                    lineNumber: 382,
+                    lineNumber: 339,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/waitlist/waitlist-form.tsx",
-                lineNumber: 378,
+                lineNumber: 335,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/waitlist/waitlist-form.tsx",
-        lineNumber: 190,
+        lineNumber: 175,
         columnNumber: 5
     }, this);
 }
-_s(WaitlistForm, "JWS3tpbbdw5VzixCxVU2lcIYoLg=", false, function() {
+_s(WaitlistForm, "39swvYxYCm5De0W7x/BFR6o3P5s=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useForm"]
     ];
