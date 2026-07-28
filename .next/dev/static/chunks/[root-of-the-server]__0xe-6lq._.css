@@ -1328,6 +1328,10 @@ img, video {
   --tw-gradient-to: #000000e6 var(--tw-gradient-to-position);
 }
 
+.to-transparent\/10 {
+  --tw-gradient-to: #0000001a var(--tw-gradient-to-position);
+}
+
 .stroke-current {
   stroke: currentColor;
 }

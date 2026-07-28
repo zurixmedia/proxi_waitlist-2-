@@ -33,7 +33,7 @@ export function WhyProxiSection() {
   return (
     <section
       id="why-proxi"
-      className="section-spacing bg-gradient-to-b from-brand-accent/5 to-transparent/90"
+      className="section-spacing bg-gradient-to-b from-brand-accent/5 to-transparent/10"
     >
       <Container>
         <div id="how-it-works" className="mx-auto max-w-3xl text-center">

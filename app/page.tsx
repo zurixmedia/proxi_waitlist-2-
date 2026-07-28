@@ -14,8 +14,8 @@ import { Footer } from '@/components/ui/footer';
 export default function LandingPage() {
   const router = useRouter();
 
-  const handleOpenRoleModal = (_role: 'homeowner' | 'artisan') => {
-    router.push('/join');
+  const handleOpenRoleModal = (role: 'homeowner' | 'artisan') => {
+    router.push(role === 'homeowner' ? '/join/customer' : '/join/artisan');
   };
 
   return (
