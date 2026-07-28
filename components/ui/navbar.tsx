@@ -1,24 +1,24 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { Logo } from "@/components/ui/logo";
-import { Container } from "@/components/ui/container";
-import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
+import * as React from 'react';
+import { Logo } from '@/components/ui/logo';
+import { Container } from '@/components/ui/container';
+import { Menu, X } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface NavbarProps {
-  onOpenRoleModal?: (role: "homeowner" | "artisan") => void;
+  onOpenRoleModal?: (role: 'homeowner' | 'artisan') => void;
   right?: React.ReactNode;
   bgClass?: string;
 }
 
 export function Navbar({ onOpenRoleModal, right, bgClass }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-  const [activeSection, setActiveSection] = React.useState("home");
+  const [activeSection, setActiveSection] = React.useState('home');
 
   React.useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "features", "why-proxi", "how-it-works"];
+      const sections = ['home', 'features', 'why-proxi', 'how-it-works'];
       const scrollPos = window.scrollY + 100;
 
       for (const sectionId of sections) {
@@ -34,28 +34,30 @@ export function Navbar({ onOpenRoleModal, right, bgClass }: NavbarProps) {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home", id: "home" },
-    { name: "Features", href: "#features", id: "features" },
-    { name: "Why Proxi", href: "#why-proxi", id: "why-proxi" },
-    { name: "How It Works", href: "#how-it-works", id: "how-it-works" },
+    { name: 'Home', href: '#home', id: 'home' },
+    { name: 'Features', href: '#features', id: 'features' },
+    { name: 'Why Proxi', href: '#why-proxi', id: 'why-proxi' },
+    { name: 'How It Works', href: '#how-it-works', id: 'how-it-works' },
   ];
 
   return (
-    <header className={cn("sticky top-0 z-50 w-full border-b border-brand-border/80 backdrop-blur-md transition-all", bgClass ?? 'bg-brand-surface/90')}>
+    <header
+      className={cn(
+        'sticky top-0 z-50 w-full border-b border-brand-border/80 backdrop-blur-md transition-all',
+        bgClass ?? 'bg-brand-surface/90',
+      )}
+    >
       <Container className="flex h-20 items-center justify-between py-4">
         {/* Left: Logo */}
         <Logo href="#home" />
 
         {/* Center: Nav links (Desktop) */}
-        <nav
-          className="hidden items-center gap-8 laptop:flex"
-          aria-label="Main Navigation"
-        >
+        <nav className="hidden items-center gap-8 laptop:flex" aria-label="Main Navigation">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -63,10 +65,8 @@ export function Navbar({ onOpenRoleModal, right, bgClass }: NavbarProps) {
                 key={link.id}
                 href={link.href}
                 className={cn(
-                  "relative py-1 text-sm font-medium transition-colors hover:text-brand-primary",
-                  isActive
-                    ? "font-bold text-brand-dark"
-                    : "text-brand-textSecondary",
+                  'relative py-1 text-sm font-medium transition-colors hover:text-brand-primary',
+                  isActive ? 'font-bold text-brand-dark' : 'text-brand-textSecondary',
                 )}
               >
                 {link.name}
@@ -86,14 +86,14 @@ export function Navbar({ onOpenRoleModal, right, bgClass }: NavbarProps) {
             <>
               <button
                 type="button"
-                onClick={() => onOpenRoleModal?.("artisan")}
+                onClick={() => onOpenRoleModal?.('artisan')}
                 className="h-10 rounded-lg border border-brand-border bg-[#F3F4F6] px-4 text-sm font-semibold text-brand-primary transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2"
               >
                 Become a Pro
               </button>
               <button
                 type="button"
-                onClick={() => onOpenRoleModal?.("homeowner")}
+                onClick={() => onOpenRoleModal?.('homeowner')}
                 className="h-10 rounded-lg bg-brand-primary px-4 text-sm font-bold text-white shadow-sm transition-all hover:bg-brand-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2"
               >
                 Join Waitlist
@@ -110,11 +110,7 @@ export function Navbar({ onOpenRoleModal, right, bgClass }: NavbarProps) {
           aria-expanded={mobileMenuOpen}
           aria-label="Toggle Navigation Menu"
         >
-          {mobileMenuOpen ? (
-            <X className="h-5 w-5" />
-          ) : (
-            <Menu className="h-5 w-5" />
-          )}
+          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </Container>
 
@@ -137,7 +133,7 @@ export function Navbar({ onOpenRoleModal, right, bgClass }: NavbarProps) {
                 type="button"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  onOpenRoleModal?.("artisan");
+                  onOpenRoleModal?.('artisan');
                 }}
                 className="w-full rounded-lg border border-brand-border py-2.5 text-center text-sm font-semibold text-brand-primary hover:bg-gray-50"
               >
@@ -147,7 +143,7 @@ export function Navbar({ onOpenRoleModal, right, bgClass }: NavbarProps) {
                 type="button"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  onOpenRoleModal?.("homeowner");
+                  onOpenRoleModal?.('homeowner');
                 }}
                 className="w-full rounded-lg bg-brand-primary py-2.5 text-center text-sm font-bold text-white hover:bg-brand-secondary"
               >

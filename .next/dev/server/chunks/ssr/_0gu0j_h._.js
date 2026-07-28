@@ -36,30 +36,30 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$
 ;
 ;
 ;
-const logoSrc = "/logos/logo.svg";
-function Logo({ className, href = "#", variant = "default", size = "md", ...props }) {
+const logoSrc = '/logos/logo.svg';
+function Logo({ className, href = '#', variant = 'default', size = 'md', ...props }) {
     const sizeClasses = {
-        sm: "text-lg gap-2",
-        md: "text-xl gap-2.5",
-        lg: "text-2xl gap-3"
+        sm: 'text-lg gap-2',
+        md: 'text-xl gap-2.5',
+        lg: 'text-2xl gap-3'
     };
     const logoSizes = {
-        sm: "h-6 w-16 sm:h-7 sm:w-20",
-        md: "h-7 w-20 sm:h-8 sm:w-24",
-        lg: "h-8 w-24 sm:h-10 sm:w-28"
+        sm: 'h-6 w-16 sm:h-7 sm:w-20',
+        md: 'h-7 w-20 sm:h-8 sm:w-24',
+        lg: 'h-8 w-24 sm:h-10 sm:w-28'
     };
     const textColors = {
-        default: "text-brand-dark",
-        dark: "text-brand-dark",
-        light: "text-white"
+        default: 'text-brand-dark',
+        dark: 'text-brand-dark',
+        light: 'text-white'
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
         href: href,
-        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("inline-flex items-center font-extrabold tracking-tight transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-lg p-1", sizeClasses[size], textColors[variant], className),
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])('inline-flex items-center font-extrabold tracking-tight transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-lg p-1', sizeClasses[size], textColors[variant], className),
         "aria-label": "Proxi Home",
         ...props,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("relative flex shrink-0 items-center justify-center", logoSizes[size]),
+            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])('relative flex shrink-0 items-center justify-center', logoSizes[size]),
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                 src: logoSrc,
                 alt: "Proxi logo",
@@ -117,7 +117,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$containe
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/menu.js [app-ssr] (ecmascript) <export default as Menu>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript) <export default as X>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/utils.ts [app-ssr] (ecmascript)");
-"use client";
+'use client';
 ;
 ;
 ;
@@ -126,14 +126,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$
 ;
 function Navbar({ onOpenRoleModal, right, bgClass }) {
     const [mobileMenuOpen, setMobileMenuOpen] = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"](false);
-    const [activeSection, setActiveSection] = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"]("home");
+    const [activeSection, setActiveSection] = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"]('home');
     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"](()=>{
         const handleScroll = ()=>{
             const sections = [
-                "home",
-                "features",
-                "why-proxi",
-                "how-it-works"
+                'home',
+                'features',
+                'why-proxi',
+                'how-it-works'
             ];
             const scrollPos = window.scrollY + 100;
             for (const sectionId of sections){
@@ -148,33 +148,33 @@ function Navbar({ onOpenRoleModal, right, bgClass }) {
                 }
             }
         };
-        window.addEventListener("scroll", handleScroll);
-        return ()=>window.removeEventListener("scroll", handleScroll);
+        window.addEventListener('scroll', handleScroll);
+        return ()=>window.removeEventListener('scroll', handleScroll);
     }, []);
     const navLinks = [
         {
-            name: "Home",
-            href: "#home",
-            id: "home"
+            name: 'Home',
+            href: '#home',
+            id: 'home'
         },
         {
-            name: "Features",
-            href: "#features",
-            id: "features"
+            name: 'Features',
+            href: '#features',
+            id: 'features'
         },
         {
-            name: "Why Proxi",
-            href: "#why-proxi",
-            id: "why-proxi"
+            name: 'Why Proxi',
+            href: '#why-proxi',
+            id: 'why-proxi'
         },
         {
-            name: "How It Works",
-            href: "#how-it-works",
-            id: "how-it-works"
+            name: 'How It Works',
+            href: '#how-it-works',
+            id: 'how-it-works'
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("sticky top-0 z-50 w-full border-b border-brand-border/80 backdrop-blur-md transition-all", bgClass ?? 'bg-brand-surface/90'),
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])('sticky top-0 z-50 w-full border-b border-brand-border/80 backdrop-blur-md transition-all', bgClass ?? 'bg-brand-surface/90'),
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$container$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Container"], {
                 className: "flex h-20 items-center justify-between py-4",
@@ -183,7 +183,7 @@ function Navbar({ onOpenRoleModal, right, bgClass }) {
                         href: "#home"
                     }, void 0, false, {
                         fileName: "[project]/components/ui/navbar.tsx",
-                        lineNumber: 52,
+                        lineNumber: 57,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -193,7 +193,7 @@ function Navbar({ onOpenRoleModal, right, bgClass }) {
                             const isActive = activeSection === link.id;
                             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: link.href,
-                                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("relative py-1 text-sm font-medium transition-colors hover:text-brand-primary", isActive ? "font-bold text-brand-dark" : "text-brand-textSecondary"),
+                                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])('relative py-1 text-sm font-medium transition-colors hover:text-brand-primary', isActive ? 'font-bold text-brand-dark' : 'text-brand-textSecondary'),
                                 children: [
                                     link.name,
                                     isActive && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -206,13 +206,13 @@ function Navbar({ onOpenRoleModal, right, bgClass }) {
                                 ]
                             }, link.id, true, {
                                 fileName: "[project]/components/ui/navbar.tsx",
-                                lineNumber: 62,
+                                lineNumber: 64,
                                 columnNumber: 15
                             }, this);
                         })
                     }, void 0, false, {
                         fileName: "[project]/components/ui/navbar.tsx",
-                        lineNumber: 55,
+                        lineNumber: 60,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -221,7 +221,7 @@ function Navbar({ onOpenRoleModal, right, bgClass }) {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     type: "button",
-                                    onClick: ()=>onOpenRoleModal?.("artisan"),
+                                    onClick: ()=>onOpenRoleModal?.('artisan'),
                                     className: "h-10 rounded-lg border border-brand-border bg-[#F3F4F6] px-4 text-sm font-semibold text-brand-primary transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2",
                                     children: "Become a Pro"
                                 }, void 0, false, {
@@ -231,7 +231,7 @@ function Navbar({ onOpenRoleModal, right, bgClass }) {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     type: "button",
-                                    onClick: ()=>onOpenRoleModal?.("homeowner"),
+                                    onClick: ()=>onOpenRoleModal?.('homeowner'),
                                     className: "h-10 rounded-lg bg-brand-primary px-4 text-sm font-bold text-white shadow-sm transition-all hover:bg-brand-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2",
                                     children: "Join Waitlist"
                                 }, void 0, false, {
@@ -256,14 +256,14 @@ function Navbar({ onOpenRoleModal, right, bgClass }) {
                             className: "h-5 w-5"
                         }, void 0, false, {
                             fileName: "[project]/components/ui/navbar.tsx",
-                            lineNumber: 114,
-                            columnNumber: 13
+                            lineNumber: 113,
+                            columnNumber: 29
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                             className: "h-5 w-5"
                         }, void 0, false, {
                             fileName: "[project]/components/ui/navbar.tsx",
-                            lineNumber: 116,
-                            columnNumber: 13
+                            lineNumber: 113,
+                            columnNumber: 57
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/ui/navbar.tsx",
@@ -273,7 +273,7 @@ function Navbar({ onOpenRoleModal, right, bgClass }) {
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/ui/navbar.tsx",
-                lineNumber: 50,
+                lineNumber: 55,
                 columnNumber: 7
             }, this),
             mobileMenuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -288,7 +288,7 @@ function Navbar({ onOpenRoleModal, right, bgClass }) {
                                 children: link.name
                             }, link.id, false, {
                                 fileName: "[project]/components/ui/navbar.tsx",
-                                lineNumber: 126,
+                                lineNumber: 122,
                                 columnNumber: 15
                             }, this)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -298,43 +298,43 @@ function Navbar({ onOpenRoleModal, right, bgClass }) {
                                     type: "button",
                                     onClick: ()=>{
                                         setMobileMenuOpen(false);
-                                        onOpenRoleModal?.("artisan");
+                                        onOpenRoleModal?.('artisan');
                                     },
                                     className: "w-full rounded-lg border border-brand-border py-2.5 text-center text-sm font-semibold text-brand-primary hover:bg-gray-50",
                                     children: "Become a Pro"
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/navbar.tsx",
-                                    lineNumber: 136,
+                                    lineNumber: 132,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     type: "button",
                                     onClick: ()=>{
                                         setMobileMenuOpen(false);
-                                        onOpenRoleModal?.("homeowner");
+                                        onOpenRoleModal?.('homeowner');
                                     },
                                     className: "w-full rounded-lg bg-brand-primary py-2.5 text-center text-sm font-bold text-white hover:bg-brand-secondary",
                                     children: "Join Waitlist"
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/navbar.tsx",
-                                    lineNumber: 146,
+                                    lineNumber: 142,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/ui/navbar.tsx",
-                            lineNumber: 135,
+                            lineNumber: 131,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/ui/navbar.tsx",
-                    lineNumber: 124,
+                    lineNumber: 120,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/ui/navbar.tsx",
-                lineNumber: 123,
+                lineNumber: 119,
                 columnNumber: 9
             }, this)
         ]
@@ -371,7 +371,7 @@ function HeroSection({ onOpenRoleModal }) {
                 className: "pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-brand-accent/10 to-transparent"
             }, void 0, false, {
                 fileName: "[project]/components/landing/hero-section.tsx",
-                lineNumber: 18,
+                lineNumber: 20,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$container$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Container"], {
@@ -385,7 +385,7 @@ function HeroSection({ onOpenRoleModal }) {
                                 children: "Coming soon in benin city."
                             }, void 0, false, {
                                 fileName: "[project]/components/landing/hero-section.tsx",
-                                lineNumber: 21,
+                                lineNumber: 23,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -397,7 +397,7 @@ function HeroSection({ onOpenRoleModal }) {
                                             "Find ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/components/landing/hero-section.tsx",
-                                                lineNumber: 27,
+                                                lineNumber: 29,
                                                 columnNumber: 20
                                             }, this),
                                             "trusted local",
@@ -407,20 +407,20 @@ function HeroSection({ onOpenRoleModal }) {
                                                     "service ",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/components/landing/hero-section.tsx",
-                                                        lineNumber: 29,
+                                                        lineNumber: 31,
                                                         columnNumber: 25
                                                     }, this),
                                                     "professionals"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/landing/hero-section.tsx",
-                                                lineNumber: 28,
+                                                lineNumber: 30,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/landing/hero-section.tsx",
-                                        lineNumber: 26,
+                                        lineNumber: 28,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -429,20 +429,20 @@ function HeroSection({ onOpenRoleModal }) {
                                             "Connect with verified artisans ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/components/landing/hero-section.tsx",
-                                                lineNumber: 33,
+                                                lineNumber: 35,
                                                 columnNumber: 46
                                             }, this),
                                             "for plumbing, electrical, painting, cleaning, and more — with transparent pricing and trusted reviews."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/landing/hero-section.tsx",
-                                        lineNumber: 32,
+                                        lineNumber: 34,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/landing/hero-section.tsx",
-                                lineNumber: 25,
+                                lineNumber: 27,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -459,12 +459,12 @@ function HeroSection({ onOpenRoleModal }) {
                                                 children: initials
                                             }, initials, false, {
                                                 fileName: "[project]/components/landing/hero-section.tsx",
-                                                lineNumber: 42,
+                                                lineNumber: 44,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/components/landing/hero-section.tsx",
-                                        lineNumber: 40,
+                                        lineNumber: 42,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -476,7 +476,7 @@ function HeroSection({ onOpenRoleModal }) {
                                                 children: "10+ homeowners"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/landing/hero-section.tsx",
-                                                lineNumber: 51,
+                                                lineNumber: 53,
                                                 columnNumber: 25
                                             }, this),
                                             " and",
@@ -486,25 +486,39 @@ function HeroSection({ onOpenRoleModal }) {
                                                 children: "8+ vetted pros"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/landing/hero-section.tsx",
-                                                lineNumber: 52,
+                                                lineNumber: 54,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/landing/hero-section.tsx",
-                                        lineNumber: 50,
+                                        lineNumber: 52,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/landing/hero-section.tsx",
-                                lineNumber: 39,
+                                lineNumber: 41,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mt-4",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(HeroJoinButton, {
+                                    onOpenRoleModal: onOpenRoleModal
+                                }, void 0, false, {
+                                    fileName: "[project]/components/landing/hero-section.tsx",
+                                    lineNumber: 58,
+                                    columnNumber: 13
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/landing/hero-section.tsx",
+                                lineNumber: 57,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/landing/hero-section.tsx",
-                        lineNumber: 20,
+                        lineNumber: 22,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -523,12 +537,12 @@ function HeroSection({ onOpenRoleModal }) {
                                         priority: true
                                     }, void 0, false, {
                                         fileName: "[project]/components/landing/hero-section.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 65,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/landing/hero-section.tsx",
-                                    lineNumber: 59,
+                                    lineNumber: 64,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -540,12 +554,12 @@ function HeroSection({ onOpenRoleModal }) {
                                                 className: "h-5 w-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/landing/hero-section.tsx",
-                                                lineNumber: 72,
+                                                lineNumber: 77,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/landing/hero-section.tsx",
-                                            lineNumber: 71,
+                                            lineNumber: 76,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -555,7 +569,7 @@ function HeroSection({ onOpenRoleModal }) {
                                                     children: "100% checked"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/landing/hero-section.tsx",
-                                                    lineNumber: 75,
+                                                    lineNumber: 80,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -563,19 +577,19 @@ function HeroSection({ onOpenRoleModal }) {
                                                     children: "Background verified"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/landing/hero-section.tsx",
-                                                    lineNumber: 78,
+                                                    lineNumber: 83,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/landing/hero-section.tsx",
-                                            lineNumber: 74,
+                                            lineNumber: 79,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/landing/hero-section.tsx",
-                                    lineNumber: 70,
+                                    lineNumber: 75,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -587,12 +601,12 @@ function HeroSection({ onOpenRoleModal }) {
                                                 className: "h-5 w-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/landing/hero-section.tsx",
-                                                lineNumber: 84,
+                                                lineNumber: 89,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/landing/hero-section.tsx",
-                                            lineNumber: 83,
+                                            lineNumber: 88,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -602,7 +616,7 @@ function HeroSection({ onOpenRoleModal }) {
                                                     children: "Escrow protected"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/landing/hero-section.tsx",
-                                                    lineNumber: 87,
+                                                    lineNumber: 92,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -610,42 +624,42 @@ function HeroSection({ onOpenRoleModal }) {
                                                     children: "Pay after approval"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/landing/hero-section.tsx",
-                                                    lineNumber: 90,
+                                                    lineNumber: 95,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/landing/hero-section.tsx",
-                                            lineNumber: 86,
+                                            lineNumber: 91,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/landing/hero-section.tsx",
-                                    lineNumber: 82,
+                                    lineNumber: 87,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/landing/hero-section.tsx",
-                            lineNumber: 58,
+                            lineNumber: 63,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/landing/hero-section.tsx",
-                        lineNumber: 57,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/landing/hero-section.tsx",
-                lineNumber: 19,
+                lineNumber: 21,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/landing/hero-section.tsx",
-        lineNumber: 14,
+        lineNumber: 16,
         columnNumber: 5
     }, this);
 }

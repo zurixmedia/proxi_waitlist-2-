@@ -5,12 +5,29 @@ import Image from 'next/image';
 import { Container } from '@/components/ui/container';
 import { ShieldCheck, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
 
 interface HeroSectionProps {
   onOpenRoleModal?: (role: 'homeowner' | 'artisan') => void;
 }
 
 export function HeroSection({ onOpenRoleModal }: HeroSectionProps) {
+  const router = useRouter();
+
+  function HeroJoinButton({
+    onOpenRoleModal,
+  }: {
+    onOpenRoleModal?: (role: 'homeowner' | 'artisan') => void;
+  }) {
+    return (
+      <Button
+        onClick={() => router.push('/join')}
+        className="bg-[#498899] hover:bg-[#3e7076] text-white"
+      >
+        Join the Waitlist
+      </Button>
+    );
+  }
   return (
     <section
       id="home"
@@ -54,12 +71,7 @@ export function HeroSection({ onOpenRoleModal }: HeroSectionProps) {
             </p>
           </div>
           <div className="mt-4">
-            <Button
-              onClick={() => onOpenRoleModal?.('homeowner')}
-              className="bg-[#498899] hover:bg-[#3e7076] text-white"
-            >
-              Join the Waitlist
-            </Button>
+            <HeroJoinButton onOpenRoleModal={onOpenRoleModal} />
           </div>
         </div>
 
