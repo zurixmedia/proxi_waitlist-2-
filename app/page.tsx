@@ -31,11 +31,11 @@ export default function LandingPage() {
         {/* Stats Counter Bar */}
         <StatsBar />
 
-        {/* Why Proxi & How It Works */}
-        <WhyProxiSection />
-
         {/* Built for Everyone / Roles Breakdown */}
         <RolesSection onOpenRoleModal={handleOpenRoleModal} />
+
+        {/* Why Proxi & How It Works */}
+        <WhyProxiSection />
 
         {/* FAQ */}
         <FaqSection />
