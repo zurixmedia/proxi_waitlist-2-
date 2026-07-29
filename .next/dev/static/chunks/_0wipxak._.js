@@ -560,7 +560,7 @@ function HeroSection({ onOpenRoleModal }) {
                                         className: "flex -space-x-3",
                                         children: [
                                             'SJ',
-                                            'MK',
+                                            'SE',
                                             'TR'
                                         ].map((initials, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: `flex h-10 w-10 items-center justify-center rounded-full border-2 border-white text-xs font-bold text-white ${index === 0 ? 'bg-brand-accent' : index === 1 ? 'bg-brand-green' : 'bg-brand-primary'}`,
@@ -581,7 +581,7 @@ function HeroSection({ onOpenRoleModal }) {
                                             "Joined by ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "font-semibold text-brand-dark",
-                                                children: "10+ homeowners"
+                                                children: "9+ homeowners"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/landing/hero-section.tsx",
                                                 lineNumber: 69,
@@ -591,7 +591,7 @@ function HeroSection({ onOpenRoleModal }) {
                                             ' ',
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "font-semibold text-brand-dark",
-                                                children: "8+ vetted pros"
+                                                children: "3+ vetted pros"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/landing/hero-section.tsx",
                                                 lineNumber: 70,
@@ -801,7 +801,7 @@ function StatsBar() {
             label: 'Homeowners joined'
         },
         {
-            value: '5+',
+            value: '3+',
             label: 'Verified pros'
         },
         {

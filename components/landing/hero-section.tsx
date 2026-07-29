@@ -56,7 +56,7 @@ export function HeroSection({ onOpenRoleModal }: HeroSectionProps) {
 
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex -space-x-3">
-              {['SJ', 'MK', 'TR'].map((initials, index) => (
+              {['SJ', 'SE', 'TR'].map((initials, index) => (
                 <div
                   key={initials}
                   className={`flex h-10 w-10 items-center justify-center rounded-full border-2 border-white text-xs font-bold text-white ${index === 0 ? 'bg-brand-accent' : index === 1 ? 'bg-brand-green' : 'bg-brand-primary'}`}
@@ -66,8 +66,8 @@ export function HeroSection({ onOpenRoleModal }: HeroSectionProps) {
               ))}
             </div>
             <p className="text-sm text-brand-textSecondary">
-              Joined by <span className="font-semibold text-brand-dark">10+ homeowners</span> and{' '}
-              <span className="font-semibold text-brand-dark">8+ vetted pros</span>
+              Joined by <span className="font-semibold text-brand-dark">9+ homeowners</span> and{' '}
+              <span className="font-semibold text-brand-dark">3+ vetted pros</span>
             </p>
           </div>
           <div className="mt-4">
