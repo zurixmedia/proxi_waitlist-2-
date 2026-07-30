@@ -1,9 +1,9 @@
-import * as React from "react";
-import { Container } from "@/components/ui/container";
-import { Check, ArrowRight } from "lucide-react";
+import * as React from 'react';
+import { Container } from '@/components/ui/container';
+import { Check, ArrowRight } from 'lucide-react';
 
 interface RolesSectionProps {
-  onOpenRoleModal?: (role: "homeowner" | "artisan") => void;
+  onOpenRoleModal?: (role: 'homeowner' | 'artisan') => void;
 }
 
 export function RolesSection({ onOpenRoleModal }: RolesSectionProps) {
@@ -31,16 +31,15 @@ export function RolesSection({ onOpenRoleModal }: RolesSectionProps) {
                 Find the right pro
               </h3>
               <p className="mt-2 text-sm leading-7 text-brand-textSecondary sm:text-base">
-                Post your job, compare quotes, and pay safely with complete
-                visibility.
+                Post your job, compare quotes, and pay safely with complete visibility.
               </p>
 
               <ul className="mt-8 space-y-4">
                 {[
-                  "Free to post any home project",
-                  "Vetted and background-checked pros",
-                  "Escrow payment protection after sign-off",
-                  "Launch credit applied to your first booking",
+                  'Free to post any home project',
+                  'Vetted and background-checked pros',
+                  'Escrow payment protection after sign-off',
+                  'Launch credit applied to your first booking',
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary/10 text-brand-primary">
@@ -57,10 +56,10 @@ export function RolesSection({ onOpenRoleModal }: RolesSectionProps) {
             <div className="mt-8 pt-4">
               <button
                 type="button"
-                onClick={() => onOpenRoleModal?.("homeowner")}
+                onClick={() => onOpenRoleModal?.('homeowner')}
                 className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-brand-primary px-6 text-sm font-semibold text-white shadow-md transition-all hover:bg-brand-secondary active:scale-[0.98]"
               >
-                <span>Join as homeowner</span>
+                <span>Join as customer</span>
                 <ArrowRight className="h-4 w-4" />
               </button>
             </div>
@@ -77,16 +76,15 @@ export function RolesSection({ onOpenRoleModal }: RolesSectionProps) {
                 Grow your business
               </h3>
               <p className="mt-2 text-sm leading-7 text-brand-textSecondary sm:text-base">
-                Get matched with high-intent local clients and build your
-                reputation faster.
+                Get matched with high-intent local clients and build your reputation faster.
               </p>
 
               <ul className="mt-8 space-y-4">
                 {[
-                  "0% commission on your first 10 bookings",
-                  "Instant direct escrow payouts",
-                  "Pioneer verified pro badge on profile",
-                  "Free business toolkit and scheduling support",
+                  '0% commission on your first 10 bookings',
+                  'Instant direct escrow payouts',
+                  'Pioneer verified pro badge on profile',
+                  'Free business toolkit and scheduling support',
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green">
@@ -103,7 +101,7 @@ export function RolesSection({ onOpenRoleModal }: RolesSectionProps) {
             <div className="mt-8 pt-4">
               <button
                 type="button"
-                onClick={() => onOpenRoleModal?.("artisan")}
+                onClick={() => onOpenRoleModal?.('artisan')}
                 className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-brand-green px-6 text-sm font-semibold text-white shadow-md transition-all hover:opacity-90 active:scale-[0.98]"
               >
                 <span>Join as professional</span>
