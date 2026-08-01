@@ -797,11 +797,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$containe
 function StatsBar() {
     const stats = [
         {
-            value: '9+',
+            value: '20+',
             label: 'Homeowners joined'
         },
         {
-            value: '3+',
+            value: '10+',
             label: 'Verified pros'
         },
         {
