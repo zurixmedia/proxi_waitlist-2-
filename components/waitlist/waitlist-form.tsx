@@ -23,6 +23,8 @@ const serviceCategories = [
   'AC Repair',
   'Appliance Repair',
   'Gardening',
+  'Media',
+  'Other',
 ];
 
 const waitlistSchema = z
