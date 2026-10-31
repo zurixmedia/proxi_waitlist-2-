@@ -3,8 +3,8 @@ import { Container } from '@/components/ui/container';
 
 export function StatsBar() {
   const stats = [
-    { value: '20+', label: 'Homeowners joined' },
-    { value: '10+', label: 'Verified pros' },
+    { value: '9+', label: 'Homeowners joined' },
+    { value: '3+', label: 'Verified pros' },
     { value: '100%', label: 'Escrow safe' },
     { value: '< 3 min', label: 'Average match time' },
   ];
